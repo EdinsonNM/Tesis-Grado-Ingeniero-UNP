@@ -51,9 +51,9 @@ Quedan fuera del alcance métrico: (a) la evaluación subjetiva de la calidad de
 
 **Delimitación Tecnológica**
 
-El estudio se circunscribe al uso de modelos LLM con soporte nativo al Model Context Protocol en su versión 1.0 ([Anthropic, 2024](#ref-anthropic2024)). El modelo base seleccionado para todos los experimentos es Claude Sonnet 4.5, utilizado a través de la API comercial de Anthropic con temperatura fija en 0.0 para garantizar la reproducibilidad de los resultados. La elección de un único modelo base es una decisión deliberada de control experimental: el objetivo del estudio es medir el efecto de las técnicas de memoria, no comparar modelos.
+El estudio se circunscribe al uso de modelos LLM con soporte nativo al Model Context Protocol en su versión 1.0 ([Anthropic, 2024](https://modelcontextprotocol.io/specification)). El modelo base seleccionado para todos los experimentos es Claude Sonnet 4.5, utilizado a través de la API comercial de Anthropic con temperatura fija en 0.0 para garantizar la reproducibilidad de los resultados. La elección de un único modelo base es una decisión deliberada de control experimental: el objetivo del estudio es medir el efecto de las técnicas de memoria, no comparar modelos.
 
-Los servidores MCP utilizados en el experimento serán seleccionados del registro público de servidores MCP (MCP Registry, 2025), priorizando aquellos que cubren tres dominios representativos: recuperación de información (search), ejecución de código y acceso a datos estructurados (bases de datos). Se utilizarán entre dos y cinco servidores MCP de forma simultánea por escenario de prueba, lo que cubre el rango de complejidad típico de los despliegues en producción reportados por la literatura.
+Los servidores MCP utilizados en el experimento serán seleccionados del registro público de servidores MCP ([MCP Registry, 2025](https://mcpregistry.dev)), priorizando aquellos que cubren tres dominios representativos: recuperación de información (search), ejecución de código y acceso a datos estructurados (bases de datos). Se utilizarán entre dos y cinco servidores MCP de forma simultánea por escenario de prueba, lo que cubre el rango de complejidad típico de los despliegues en producción reportados por la literatura.
 
 La infraestructura de cómputo se limitará a instancias de cómputo en la nube disponibles con presupuesto de investigación de maestría. No se incluirán experimentos que requieran GPUs de alta gama para inferencia local de modelos, ni despliegues en clústeres de alta disponibilidad. Esta restricción es coherente con el enfoque de la investigación, centrado en técnicas de nivel de agente aplicables en entornos de uso de APIs de inferencia comerciales.
 
@@ -63,7 +63,7 @@ Dado que la investigación es de naturaleza experimental y los experimentos se e
 
 La población de interés está constituida por los sistemas de agentes LLM conectados a múltiples servidores MCP en entornos de producción. Dado que no es posible acceder a los sistemas de producción de terceros para su instrumentación y medición, el estudio trabaja con una muestra experimental controlada: agentes implementados por el investigador, ejecutados sobre conjuntos de datos de prueba diseñados para simular conversaciones representativas de los casos de uso reales más frecuentes.
 
-Los conjuntos de datos de prueba se construirán combinando datasets de referencia de la literatura —LongMemEval ([Truong & Ho, 2023](#ref-truong2023)), LoCoMo ([Maharana et al., 2024](#ref-maharana2024)) y SimpleToolHalluBench ([Zeng et al., 2025](#ref-zeng2025))— con escenarios adicionales diseñados específicamente para el contexto multi-MCP, lo que garantiza tanto la comparabilidad con estudios previos como la relevancia para el problema específico estudiado.
+Los conjuntos de datos de prueba se construirán combinando datasets de referencia de la literatura —LongMemEval ([Truong & Ho, 2023](https://arxiv.org/abs/2410.10813)), LoCoMo ([Maharana et al., 2024](https://arxiv.org/abs/2402.17753)) y SimpleToolHalluBench ([Zeng et al., 2025](https://arxiv.org/abs/2501.13395))— con escenarios adicionales diseñados específicamente para el contexto multi-MCP, lo que garantiza tanto la comparabilidad con estudios previos como la relevancia para el problema específico estudiado.
 
 **Delimitación Temporal**
 
@@ -97,23 +97,16 @@ Esta delimitación es coherente con el principio de parsimonia científica: un e
 
 **Referencias**
 
-<a id="ref-anthropic2024"></a>
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. [https://modelcontextprotocol.io/specification](https://modelcontextprotocol.io/specification)
 
-<a id="ref-hernandez2014"></a>
 Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, P. (2014). Metodología de la investigación (6.ª ed.). McGraw-Hill Education.
 
-<a id="ref-maharana2024"></a>
 Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. arXiv. [https://arxiv.org/abs/2402.17753](https://arxiv.org/abs/2402.17753)
 
-<a id="ref-mcp2025"></a>
 MCP Registry. (2025). Public MCP server catalog. [https://mcpregistry.dev](https://mcpregistry.dev)
 
-<a id="ref-tang2025"></a>
 Tang, R., Jin, Z., Alexandrov, A., Shao, Y., Shi, P., & Pan, L. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2502.03415](https://arxiv.org/abs/2502.03415)
 
-<a id="ref-truong2023"></a>
 Truong, T. H., & Ho, T. B. (2023). LongMemEval: Benchmarking long-context language models on long-term interactive memory. arXiv. [https://arxiv.org/abs/2410.10813](https://arxiv.org/abs/2410.10813)
 
-<a id="ref-zeng2025"></a>
 Zeng, Z., Liu, M., Lu, R., Wang, B., Liu, X., & Cheng, X. (2025). SimpleToolHalluBench: Towards a comprehensive assessment of tool call hallucination in large language models. arXiv. [https://arxiv.org/abs/2501.13395](https://arxiv.org/abs/2501.13395)

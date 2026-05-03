@@ -33,7 +33,7 @@ La hipótesis general de la investigación se enuncia del siguiente modo:
 > 
 > **HG₀:** La aplicación de técnicas de memoria y gestión de contexto no produce una mejora estadísticamente significativa en el Índice de Calidad de Respuesta Compuesto (IQCR) respecto a la arquitectura base sin dichas técnicas en agentes LLM conectados a múltiples servidores MCP (α = 0.05).
 
-La hipótesis general establece tres condiciones verificables: (a) la dirección del efecto —reducción de la degradación, equivalente a mejora del IQCR—; (b) el umbral de magnitud mínima del efecto —30% de mejora—; y (c) el punto de medición de referencia —después de 50 turnos de conversación—. El umbral del 30% se deriva de la evidencia reportada por [Chroma Research (2025)](#ref-chroma2025), que documentó degradaciones superiores al 30% en sistemas de producción sin técnicas de memoria, lo que establece como criterio de relevancia práctica una mejora que revierta al menos la totalidad de esa degradación observada.
+La hipótesis general establece tres condiciones verificables: (a) la dirección del efecto —reducción de la degradación, equivalente a mejora del IQCR—; (b) el umbral de magnitud mínima del efecto —30% de mejora—; y (c) el punto de medición de referencia —después de 50 turnos de conversación—. El umbral del 30% se deriva de la evidencia reportada por [Chroma Research (2025)](https://www.trychroma.com/blog/context-rot), que documentó degradaciones superiores al 30% en sistemas de producción sin técnicas de memoria, lo que establece como criterio de relevancia práctica una mejora que revierta al menos la totalidad de esa degradación observada.
 
 La hipótesis general es verificable mediante la comparación del IQCR promedio en el turno 50 entre el grupo de control (sin técnicas de memoria) y el mejor grupo de tratamiento (configuración óptima de técnicas), utilizando una prueba t de Student de una cola con α = 0.05. El tamaño del efecto se reportará mediante d de Cohen, considerando un efecto grande (d ≥ 0.8) como criterio adicional de relevancia práctica.
 
@@ -47,7 +47,7 @@ Las hipótesis específicas desagregan la hipótesis general en componentes veri
 > 
 > **HE1₀:** En ausencia de técnicas de memoria o gestión de contexto, no existe una diferencia estadísticamente significativa (α = 0.05) en la exactitud de respuesta ni en la tasa de alucinación entre el turno 10 y el turno 50 de conversaciones con agentes LLM conectados a múltiples servidores MCP.
 
-Esta hipótesis establece la existencia y magnitud del fenómeno de context rot como condición previa para justificar el resto del estudio experimental. Los umbrales del 25% en exactitud y el 15% en alucinación se derivan de los valores reportados en la literatura: [Liu et al. (2023)](#ref-liu2023) documentaron pérdidas de hasta el 40% en recuperación de información en contextos largos, y [Chroma Research (2025)](#ref-chroma2025) reportó degradaciones superiores al 30% en agentes de producción. Los umbrales de esta hipótesis son conservadores respecto a esa evidencia, garantizando que la hipótesis sea verificable incluso si el context rot en el escenario multi-MCP específico de la tesis es menos severo que en los estudios previos.
+Esta hipótesis establece la existencia y magnitud del fenómeno de context rot como condición previa para justificar el resto del estudio experimental. Los umbrales del 25% en exactitud y el 15% en alucinación se derivan de los valores reportados en la literatura: [Liu et al. (2023)](https://doi.org/10.1162/tacl\_a\_00638) documentaron pérdidas de hasta el 40% en recuperación de información en contextos largos, y [Chroma Research (2025)](https://www.trychroma.com/blog/context-rot) reportó degradaciones superiores al 30% en agentes de producción. Los umbrales de esta hipótesis son conservadores respecto a esa evidencia, garantizando que la hipótesis sea verificable incluso si el context rot en el escenario multi-MCP específico de la tesis es menos severo que en los estudios previos.
 
 La verificación se realizará mediante prueba de Wilcoxon de los rangos con signo (dado que los datos pueden no ser normales) comparando las distribuciones de exactitud y alucinación entre los turnos 10 y 50, con corrección de Bonferroni para comparaciones múltiples. El protocolo de muestreo incluirá mínimo 30 conversaciones independientes de 50 turnos para garantizar potencia estadística suficiente (1 - β ≥ 0.80).
 
@@ -67,7 +67,7 @@ La verificación se realizará mediante ANOVA de un factor con post-hoc de Tukey
 > 
 > **HE3₀:** Las estrategias de tool gating no producen una reducción del 50% o mayor en el consumo de tokens de descripción de herramientas, o producen una reducción estadísticamente significativa (α = 0.05) en la tasa de selección correcta de herramientas, o producen un incremento mayor al 10% en la tasa de alucinación de parámetros.
 
-Esta hipótesis es compuesta: requiere simultáneamente la verificación del beneficio (reducción de tokens) y la ausencia de efecto negativo relevante (mantenimiento de la exactitud). La formulación compuesta es intencionada: el objetivo del tool gating no es simplemente reducir tokens sino hacerlo sin sacrificar la capacidad del agente para seleccionar herramientas correctamente. El umbral del 50% de reducción de tokens se deriva del valor reportado por [Tang et al. (2025)](#ref-tang2025) para RAG-MCP en catálogos de 128 herramientas.
+Esta hipótesis es compuesta: requiere simultáneamente la verificación del beneficio (reducción de tokens) y la ausencia de efecto negativo relevante (mantenimiento de la exactitud). La formulación compuesta es intencionada: el objetivo del tool gating no es simplemente reducir tokens sino hacerlo sin sacrificar la capacidad del agente para seleccionar herramientas correctamente. El umbral del 50% de reducción de tokens se deriva del valor reportado por [Tang et al. (2025)](https://arxiv.org/abs/2502.03415) para RAG-MCP en catálogos de 128 herramientas.
 
 La verificación del beneficio se realizará mediante prueba t de una cola comparando el consumo de tokens entre condiciones con y sin tool gating. La verificación de la ausencia de daño en la selección de herramientas se realizará mediante prueba de equivalencia (TOST, two one-sided tests) con un margen de equivalencia del 10% en la tasa de selección correcta, lo que proporciona evidencia positiva de ausencia de efecto dañino y no solo ausencia de evidencia de daño.
 
@@ -87,7 +87,7 @@ La verificación se realizará mediante el análisis del diseño factorial: los 
 > 
 > **HE5₀:** No existen umbrales discretos estadísticamente detectables de longitud de contexto o número de servidores MCP a partir de los cuales la degradación de respuestas sea significativa, o si existen, no son localizables dentro de los rangos de experimentación del estudio con potencia estadística suficiente (1 - β ≥ 0.80).
 
-Esta hipótesis tiene el mayor valor práctico para el diseño de sistemas en producción: si los umbrales son discretos y predecibles, es posible implementar políticas de activación automática de técnicas de memoria basadas en contadores de tokens o número de servidores activos. Los rangos predichos —20,000 a 60,000 tokens sin memoria y 50,000 a 100,000 con memoria— se derivan de la evidencia de [Liu et al. (2023)](#ref-liu2023) sobre el efecto lost-in-the-middle (observable a partir de 4,000 tokens en tareas de lectura) escalada al contexto de agentes multi-MCP donde el overhead de herramientas ocupa típicamente 10,000–20,000 tokens antes de que comience la conversación.
+Esta hipótesis tiene el mayor valor práctico para el diseño de sistemas en producción: si los umbrales son discretos y predecibles, es posible implementar políticas de activación automática de técnicas de memoria basadas en contadores de tokens o número de servidores activos. Los rangos predichos —20,000 a 60,000 tokens sin memoria y 50,000 a 100,000 con memoria— se derivan de la evidencia de [Liu et al. (2023)](https://doi.org/10.1162/tacl\_a\_00638) sobre el efecto lost-in-the-middle (observable a partir de 4,000 tokens en tareas de lectura) escalada al contexto de agentes multi-MCP donde el overhead de herramientas ocupa típicamente 10,000–20,000 tokens antes de que comience la conversación.
 
 La verificación se realizará mediante el algoritmo PELT (Pruned Exact Linear Time) de detección de puntos de cambio, aplicado a las series temporales de exactitud de respuesta y tasa de alucinación a lo largo de las conversaciones experimentales. Los puntos de cambio detectados se validarán mediante bootstrapping (1,000 muestras) para estimar sus intervalos de confianza al 95%. La detección se realizará independientemente para cada combinación de número de servidores MCP (2, 3 y 5 servidores activos).
 
@@ -134,38 +134,26 @@ La Tabla 2 presenta la correspondencia completa entre cada hipótesis y su probl
 
 **Referencias**
 
-<a id="ref-american2020"></a>
 American Psychological Association. (2020). Publication manual of the American Psychological Association (7.ª ed.). [https://doi.org/10.1037/0000165-000](https://doi.org/10.1037/0000165-000)
 
-<a id="ref-chroma2025"></a>
 Chroma Research. (2025). Context rot in production LLM systems: A benchmark study. Chroma. [https://www.trychroma.com/blog/context-rot](https://www.trychroma.com/blog/context-rot)
 
-<a id="ref-cohen1988"></a>
 Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2.ª ed.). Lawrence Erlbaum Associates.
 
-<a id="ref-faul2007"></a>
 Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G\*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behavior Research Methods, 39(2), 175–191. [https://doi.org/10.3758/BF03193146](https://doi.org/10.3758/BF03193146)
 
-<a id="ref-hu2023"></a>
 Hu, J., Huang, S., Luo, Y., Wu, F., & Lam, W. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. [https://arxiv.org/abs/2305.10250](https://arxiv.org/abs/2305.10250)
 
-<a id="ref-killick2012"></a>
 Killick, R., Fearnhead, P., & Eckley, I. A. (2012). Optimal detection of changepoints with a linear computational cost. Journal of the American Statistical Association, 107(500), 1590–1598. [https://doi.org/10.1080/01621459.2012.737745](https://doi.org/10.1080/01621459.2012.737745)
 
-<a id="ref-lewis2020"></a>
 Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459–9474. [https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
 
-<a id="ref-liu2023"></a>
 Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. [https://doi.org/10.1162/tacl\_a\_00638](https://doi.org/10.1162/tacl\_a\_00638)
 
-<a id="ref-montgomery2017"></a>
 Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
-<a id="ref-packer2023"></a>
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
-<a id="ref-tang2025"></a>
 Tang, R., Jin, Z., Alexandrov, A., Shao, Y., Shi, P., & Pan, L. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2502.03415](https://arxiv.org/abs/2502.03415)
 
-<a id="ref-zeng2025"></a>
 Zeng, Z., Liu, M., Lu, R., Wang, B., Liu, X., & Cheng, X. (2025). SimpleToolHalluBench: Towards a comprehensive assessment of tool call hallucination in large language models. arXiv. [https://arxiv.org/abs/2501.13395](https://arxiv.org/abs/2501.13395)

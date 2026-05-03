@@ -29,20 +29,14 @@ La matriz general de consistencia expande la Matriz de Consistencia (DOC-16) con
 
 **Referencias**
 
-<a id="ref-cohen1988"></a>
 Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2.ª ed.). Lawrence Erlbaum Associates.
 
-<a id="ref-hernandez2014"></a>
 Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, P. (2014). Metodología de la investigación (6.ª ed.). McGraw-Hill Education.
 
-<a id="ref-killick2012"></a>
 Killick, R., Fearnhead, P., & Eckley, I. A. (2012). Optimal detection of changepoints with a linear computational cost. Journal of the American Statistical Association, 107(500), 1590–1598. [https://doi.org/10.1080/01621459.2012.737745](https://doi.org/10.1080/01621459.2012.737745)
 
-<a id="ref-montgomery2017"></a>
 Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
-<a id="ref-saaty1980"></a>
 Saaty, T. L. (1980). The analytic hierarchy process. McGraw-Hill.
 
-<a id="ref-zhang2020"></a>
 Zhang, T., Kishore, V., Wu, F., Weinberger, K. Q., & Artzi, Y. (2020). BERTScore: Evaluating text generation with BERT. International Conference on Learning Representations. [https://openreview.net/forum?id=SkeHuCVFDr](https://openreview.net/forum?id=SkeHuCVFDr)

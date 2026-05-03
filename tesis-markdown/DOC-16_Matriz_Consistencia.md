@@ -29,11 +29,8 @@ La presente matriz articula los componentes centrales del diseño de investigaci
 
 **Referencias**
 
-<a id="ref-hernandez2014"></a>
 Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, P. (2014). Metodología de la investigación (6.ª ed.). McGraw-Hill Education.
 
-<a id="ref-montgomery2017"></a>
 Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
-<a id="ref-saaty1980"></a>
 Saaty, T. L. (1980). The analytic hierarchy process. McGraw-Hill.
