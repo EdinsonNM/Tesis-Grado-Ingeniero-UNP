@@ -25,9 +25,9 @@ La justificación de una investigación expone las razones de orden teórico, pr
 
 **Justificación Teórica**
 
-El campo de los agentes LLM ha experimentado un crecimiento exponencial desde la publicación de ReAct (Yao et al., 2022) y Toolformer (Schick et al., 2023), que demostraron la capacidad de los modelos de lenguaje para razonar sobre acciones y llamadas a herramientas externas. Sin embargo, el estudio sistemático del comportamiento de estos agentes bajo condiciones de contexto extendido —especialmente en arquitecturas multi-servidor— permanece en una etapa incipiente.
+El campo de los agentes LLM ha experimentado un crecimiento exponencial desde la publicación de ReAct ([Yao et al., 2022](#ref-yao2022)) y Toolformer ([Schick et al., 2023](#ref-schick2023)), que demostraron la capacidad de los modelos de lenguaje para razonar sobre acciones y llamadas a herramientas externas. Sin embargo, el estudio sistemático del comportamiento de estos agentes bajo condiciones de contexto extendido —especialmente en arquitecturas multi-servidor— permanece en una etapa incipiente.
 
-La emergencia del Model Context Protocol (Anthropic, 2024) como estándar abierto para la interoperabilidad entre agentes LLM y herramientas externas plantea preguntas teóricas no resueltas. La literatura disponible sobre degradación de respuestas en contextos largos (Liu et al., 2023; Shi et al., 2023) se ha desarrollado principalmente en escenarios de lectura de documentos extensos, sin considerar la dinámica acumulativa propia de las arquitecturas multi-MCP: resultados intermedios de herramientas, esquemas de herramientas repetidos, estados de sesión múltiples y tráfico de metadatos de servidor que se acumulan en el contexto de forma estructuralmente diferente a los documentos de texto.
+La emergencia del Model Context Protocol ([Anthropic, 2024](#ref-anthropic2024)) como estándar abierto para la interoperabilidad entre agentes LLM y herramientas externas plantea preguntas teóricas no resueltas. La literatura disponible sobre degradación de respuestas en contextos largos ([Liu et al., 2023](#ref-liu2023); [Shi et al., 2023](#ref-shi2023)) se ha desarrollado principalmente en escenarios de lectura de documentos extensos, sin considerar la dinámica acumulativa propia de las arquitecturas multi-MCP: resultados intermedios de herramientas, esquemas de herramientas repetidos, estados de sesión múltiples y tráfico de metadatos de servidor que se acumulan en el contexto de forma estructuralmente diferente a los documentos de texto.
 
 La presente investigación contribuye teóricamente en tres frentes. Primero, propone y operacionaliza el concepto de context rot en arquitecturas multi-MCP, diferenciándolo de la simple degradación por longitud de contexto que ha sido estudiada en la literatura previa. Segundo, sistematiza un marco de clasificación de técnicas de mitigación —memoria externa, compresión de contexto, filtrado de herramientas y caching semántico— aplicado específicamente al escenario MCP, lo que no existe en la literatura actual. Tercero, genera evidencia empírica cuantitativa sobre los umbrales a partir de los cuales el context rot se vuelve estadísticamente significativo, lo que permite avanzar desde la observación cualitativa hacia la modelización predictiva del fenómeno.
 
@@ -43,7 +43,7 @@ Los desarrolladores que construyen agentes LLM sobre infraestructuras MCP carece
 
 **Para Organizaciones que Despliegan IA en Producción**
 
-Las organizaciones que implementan agentes LLM en entornos empresariales enfrentan costos operativos directamente relacionados con el consumo de tokens. Según datos de Redis Labs (2025), el 67% del costo de inferencia en sistemas multi-herramienta corresponde a la transmisión de contexto acumulado, no a la generación de respuestas nuevas. La investigación aportará métricas cuantitativas de reducción de consumo de tokens por técnica, lo que permitirá a los equipos de arquitectura de IA realizar análisis de costo-beneficio informados antes de seleccionar su stack tecnológico de memoria. Para el contexto peruano, donde el 58.4% de las empresas que adoptan IA reportan restricciones de presupuesto como barrera principal (INEI, 2024), esta información tiene un impacto multiplicador en la viabilidad de los proyectos.
+Las organizaciones que implementan agentes LLM en entornos empresariales enfrentan costos operativos directamente relacionados con el consumo de tokens. Según datos de [Redis Labs (2025)](#ref-redis2025), el 67% del costo de inferencia en sistemas multi-herramienta corresponde a la transmisión de contexto acumulado, no a la generación de respuestas nuevas. La investigación aportará métricas cuantitativas de reducción de consumo de tokens por técnica, lo que permitirá a los equipos de arquitectura de IA realizar análisis de costo-beneficio informados antes de seleccionar su stack tecnológico de memoria. Para el contexto peruano, donde el 58.4% de las empresas que adoptan IA reportan restricciones de presupuesto como barrera principal ([INEI, 2024](#ref-inei2024)), esta información tiene un impacto multiplicador en la viabilidad de los proyectos.
 
 **Para Proveedores de Plataformas MCP**
 
@@ -67,7 +67,7 @@ El context rot tiene consecuencias directas sobre la experiencia del usuario: un
 
 **Capacitación de Talento Técnico en el Perú**
 
-El Perú ocupa el puesto 60 en el Government AI Readiness Index 2023 (Oxford Insights, 2023) y enfrenta una brecha significativa en talento técnico especializado en IA. Solo el 6% de las empresas peruanas que adoptan IA declaran tener equipos técnicos con capacidades avanzadas, frente al 17–18% de Chile y Colombia (INEI, 2024). La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
+El Perú ocupa el puesto 60 en el Government AI Readiness Index 2023 (Oxford Insights, 2023) y enfrenta una brecha significativa en talento técnico especializado en IA. Solo el 6% de las empresas peruanas que adoptan IA declaran tener equipos técnicos con capacidades avanzadas, frente al 17–18% de Chile y Colombia ([INEI, 2024](#ref-inei2024)). La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
 
 **Adopción Informada de IA en el Contexto Nacional**
 
@@ -81,7 +81,7 @@ El Model Context Protocol fue publicado por Anthropic en noviembre de 2024 y alc
 
 **Originalidad y Posición en la Literatura**
 
-Una revisión sistemática de la literatura (realizada en la preparación de esta tesis) no encontró ningún estudio que aborde específicamente la medición del context rot en arquitecturas multi-MCP bajo un diseño experimental controlado. Los estudios más próximos —Liu et al. (2023) sobre pérdida de información en contextos largos, Chroma Research (2025) sobre degradación en sistemas de producción, y Tang et al. (2025) sobre RAG-MCP— tratan subconjuntos del problema sin integrarlo en un marco unificado. Esta originalidad posiciona la tesis como un aporte de frontera al campo.
+Una revisión sistemática de la literatura (realizada en la preparación de esta tesis) no encontró ningún estudio que aborde específicamente la medición del context rot en arquitecturas multi-MCP bajo un diseño experimental controlado. Los estudios más próximos —[Liu et al. (2023)](#ref-liu2023) sobre pérdida de información en contextos largos, [Chroma Research (2025)](#ref-chroma2025) sobre degradación en sistemas de producción, y [Tang et al. (2025)](#ref-tang2025) sobre RAG-MCP— tratan subconjuntos del problema sin integrarlo en un marco unificado. Esta originalidad posiciona la tesis como un aporte de frontera al campo.
 
 **Escalabilidad de los Resultados**
 
@@ -103,28 +103,41 @@ La Tabla 1 resume las cuatro dimensiones de justificación, sus argumentos centr
 
 **Referencias**
 
+<a id="ref-anthropic2024"></a>
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. [https://modelcontextprotocol.io/specification](https://modelcontextprotocol.io/specification)
 
+<a id="ref-chroma2025"></a>
 Chroma Research. (2025). Context rot in production LLM systems: A benchmark study. Chroma. [https://www.trychroma.com/blog/context-rot](https://www.trychroma.com/blog/context-rot)
 
+<a id="ref-inei2024"></a>
 INEI. (2024). Encuesta Nacional de Empresas: Uso de tecnologías de información e inteligencia artificial. Instituto Nacional de Estadística e Informática. [https://www.inei.gob.pe](https://www.inei.gob.pe)
 
+<a id="ref-liu2023"></a>
 Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. [https://doi.org/10.1162/tacl\_a\_00638](https://doi.org/10.1162/tacl\_a\_00638)
 
+<a id="ref-mcp2025"></a>
 MCP Registry. (2025). Public MCP server catalog. [https://mcpregistry.dev](https://mcpregistry.dev)
 
+<a id="ref-oxford2023"></a>
 Oxford Insights. (2023). Government AI Readiness Index 2023. Oxford Insights. [https://oxfordinsights.com/ai-readiness/ai-readiness-index](https://oxfordinsights.com/ai-readiness/ai-readiness-index)
 
+<a id="ref-packer2023"></a>
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
+<a id="ref-presidencia2020"></a>
 Presidencia del Consejo de Ministros. (2020). Decreto Supremo N° 007-2020-PCM: Política Nacional de Transformación Digital al 2030. El Peruano. [https://www.gob.pe/institucion/pcm/normas-legales/659568-007-2020-pcm](https://www.gob.pe/institucion/pcm/normas-legales/659568-007-2020-pcm)
 
+<a id="ref-redis2025"></a>
 Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. [https://redis.io/blog/enterprise-ai-memory-2025](https://redis.io/blog/enterprise-ai-memory-2025)
 
+<a id="ref-schick2023"></a>
 Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. Advances in Neural Information Processing Systems, 36. [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
 
+<a id="ref-shi2023"></a>
 Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. Proceedings of the 40th International Conference on Machine Learning, 202, 31210–31227. [https://proceedings.mlr.press/v202/shi23a.html](https://proceedings.mlr.press/v202/shi23a.html)
 
+<a id="ref-tang2025"></a>
 Tang, R., Jin, Z., Alexandrov, A., Shao, Y., Shi, P., & Pan, L. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2502.03415](https://arxiv.org/abs/2502.03415)
 
+<a id="ref-yao2022"></a>
 Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
