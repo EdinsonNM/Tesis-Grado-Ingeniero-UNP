@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "04-Conceptos/F-Metodologia/PELT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "PELT"
             }
           }
         ]
@@ -168,8 +168,10 @@
   },
   "active": "946dd33fc071ef70",
   "lastOpenFiles": [
-    "Bienvenido.md",
+    "04-Conceptos/F-Metodologia/Diseno factorial 2k.md",
+    "03-Metodologia/Diseno metodologico.md",
     "index.md",
+    "Bienvenido.md",
     "CLAUDE.md",
     "log.md",
     "02-Marco-Teorico/Bases Teoricas.md",
@@ -191,11 +193,9 @@
     "04-Conceptos/D-Metricas/Variable dependiente.md",
     "04-Conceptos/F-Metodologia/TOST.md",
     "04-Conceptos/F-Metodologia/PELT.md",
-    "04-Conceptos/F-Metodologia/Diseno factorial 2k.md",
     "04-Conceptos/F-Metodologia",
     "04-Conceptos/E-Benchmarks/ToolHaystack.md",
     "04-Conceptos/E-Benchmarks/SimpleToolHalluBench.md",
-    "04-Conceptos/E-Benchmarks/LongMemEval.md",
     "04-Conceptos/E-Benchmarks",
     "04-Conceptos/D-Metricas",
     "04-Conceptos/C-Mitigacion",
