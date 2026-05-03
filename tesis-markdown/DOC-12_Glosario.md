@@ -41,7 +41,7 @@ Los términos están ordenados alfabéticamente. Las siglas en español e inglé
 
 **C**
 
-**Caching semántico**. Técnica de optimización que almacena pares (consulta, respuesta) y los recupera cuando una nueva consulta es semánticamente equivalente a una almacenada, determinando la equivalencia mediante similitud coseno entre vectores de embeddings en lugar de coincidencia textual exacta. Reduce el número de invocaciones de inferencia del modelo para consultas similares. *([Redis Labs, 2025](https://redis.io/blog/enterprise-ai-memory-2025))*
+**Caching semántico**. Técnica de optimización que almacena pares (consulta, respuesta) y los recupera cuando una nueva consulta es semánticamente equivalente a una almacenada, determinando la equivalencia mediante similitud coseno entre vectores de embeddings en lugar de coincidencia textual exacta. Reduce el número de invocaciones de inferencia del modelo para consultas similares. *([Redis Labs, 2025](https://redis.io/blog/engineering-for-ai-agents/))*
 
 **Coherencia conversacional**. Propiedad de un agente LLM que denota la consistencia interna de sus respuestas a lo largo de una conversación extendida, incluyendo la consistencia de afirmaciones factuales entre turnos, la continuidad lógica del razonamiento y la ausencia de contradicciones con información proporcionada o generada anteriormente en la sesión.
 
@@ -183,7 +183,7 @@ Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
-Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. [https://redis.io/blog/enterprise-ai-memory-2025](https://redis.io/blog/enterprise-ai-memory-2025)
+Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. [https://redis.io/blog/engineering-for-ai-agents/](https://redis.io/blog/engineering-for-ai-agents/)
 
 Tang, R., Jin, Z., Alexandrov, A., Shao, Y., Shi, P., & Pan, L. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2502.03415](https://arxiv.org/abs/2502.03415)
 

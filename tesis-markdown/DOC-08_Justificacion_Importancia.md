@@ -43,7 +43,7 @@ Los desarrolladores que construyen agentes LLM sobre infraestructuras MCP carece
 
 **Para Organizaciones que Despliegan IA en Producción**
 
-Las organizaciones que implementan agentes LLM en entornos empresariales enfrentan costos operativos directamente relacionados con el consumo de tokens. Según datos de [Redis Labs (2025)](https://redis.io/blog/enterprise-ai-memory-2025), el 67% del costo de inferencia en sistemas multi-herramienta corresponde a la transmisión de contexto acumulado, no a la generación de respuestas nuevas. La investigación aportará métricas cuantitativas de reducción de consumo de tokens por técnica, lo que permitirá a los equipos de arquitectura de IA realizar análisis de costo-beneficio informados antes de seleccionar su stack tecnológico de memoria. Para el contexto peruano, donde el 58.4% de las empresas que adoptan IA reportan restricciones de presupuesto como barrera principal ([INEI, 2024](https://www.inei.gob.pe)), esta información tiene un impacto multiplicador en la viabilidad de los proyectos.
+Las organizaciones que implementan agentes LLM en entornos empresariales enfrentan costos operativos directamente relacionados con el consumo de tokens. Según datos de [Redis Labs (2025)](https://redis.io/blog/engineering-for-ai-agents/), el 67% del costo de inferencia en sistemas multi-herramienta corresponde a la transmisión de contexto acumulado, no a la generación de respuestas nuevas. La investigación aportará métricas cuantitativas de reducción de consumo de tokens por técnica, lo que permitirá a los equipos de arquitectura de IA realizar análisis de costo-beneficio informados antes de seleccionar su stack tecnológico de memoria. Para el contexto peruano, donde el 58.4% de las empresas que adoptan IA reportan restricciones de presupuesto como barrera principal ([INEI, 2024](https://www.inei.gob.pe)), esta información tiene un impacto multiplicador en la viabilidad de los proyectos.
 
 **Para Proveedores de Plataformas MCP**
 
@@ -119,7 +119,7 @@ Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez
 
 Presidencia del Consejo de Ministros. (2020). Decreto Supremo N° 007-2020-PCM: Política Nacional de Transformación Digital al 2030. El Peruano. [https://www.gob.pe/institucion/pcm/normas-legales/659568-007-2020-pcm](https://www.gob.pe/institucion/pcm/normas-legales/659568-007-2020-pcm)
 
-Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. [https://redis.io/blog/enterprise-ai-memory-2025](https://redis.io/blog/enterprise-ai-memory-2025)
+Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. [https://redis.io/blog/engineering-for-ai-agents/](https://redis.io/blog/engineering-for-ai-agents/)
 
 Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. Advances in Neural Information Processing Systems, 36. [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
 
