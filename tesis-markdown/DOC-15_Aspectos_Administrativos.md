@@ -96,10 +96,10 @@ Las actividades del cronograma son congruentes con el presupuesto de la Tabla 1:
 
 **Referencias**
 
-Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. https://modelcontextprotocol.io/specification
+Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. [https://modelcontextprotocol.io/specification](https://modelcontextprotocol.io/specification)
 
 Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, P. (2014). Metodología de la investigación (6.ª ed.). McGraw-Hill Education.
 
 Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
-Strubell, E., Ganesh, A., & McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 3645–3650. https://doi.org/10.18653/v1/P19-1355
+Strubell, E., Ganesh, A., & McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 3645–3650. [https://doi.org/10.18653/v1/P19-1355](https://doi.org/10.18653/v1/P19-1355)

@@ -85,24 +85,24 @@ La presente tesis se organiza en cinco capítulos. El Capítulo I presenta el pl
 
 **Referencias**
 
-Anthropic. (2024). Model Context Protocol specification. Anthropic. https://modelcontextprotocol.io/specification/2025-11-25
+Anthropic. (2024). Model Context Protocol specification. Anthropic. [https://modelcontextprotocol.io/specification/2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25)
 
-Chhikara, P., Singh, T., Yadav, D., Nie, N., & Doerr, T. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. https://arxiv.org/abs/2504.19413
+Chhikara, P., Singh, T., Yadav, D., Nie, N., & Doerr, T. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. [https://arxiv.org/abs/2504.19413](https://arxiv.org/abs/2504.19413)
 
-Gan, T., & Sun, Q. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. https://arxiv.org/abs/2505.03275
+Gan, T., & Sun, Q. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2505.03275](https://arxiv.org/abs/2505.03275)
 
-Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of the 31st International Conference on Computational Linguistics: Industry Track (pp. 350–365). Association for Computational Linguistics. https://arxiv.org/abs/2501.09645
+Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of the 31st International Conference on Computational Linguistics: Industry Track (pp. 350–365). Association for Computational Linguistics. [https://arxiv.org/abs/2501.09645](https://arxiv.org/abs/2501.09645)
 
-LangChain. (2024). LangGraph: State management and agent orchestration \[Documentación técnica\]. LangChain Inc. https://langchain-ai.github.io/langgraph/
+LangChain. (2024). LangGraph: State management and agent orchestration \[Documentación técnica\]. LangChain Inc. [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/)
 
-Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (pp. 13851–13870). ACL. https://arxiv.org/abs/2402.17753
+Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (pp. 13851–13870). ACL. [https://arxiv.org/abs/2402.17753](https://arxiv.org/abs/2402.17753)
 
-Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. https://arxiv.org/abs/2310.08560
+Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
-Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2024). LongMemEval: Benchmarking chat assistants on long-term interactive memory. arXiv. https://arxiv.org/abs/2410.10813
+Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2024). LongMemEval: Benchmarking chat assistants on long-term interactive memory. arXiv. [https://arxiv.org/abs/2410.10813](https://arxiv.org/abs/2410.10813)
 
-Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. https://arxiv.org/abs/2210.03629
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
 
-Zhang, Y., et al. (2024). ToolBeHonest: A multi-level hallucination diagnostic benchmark for tool-augmented large language models. arXiv. https://arxiv.org/abs/2406.20015
+Zhang, Y., et al. (2024). ToolBeHonest: A multi-level hallucination diagnostic benchmark for tool-augmented large language models. arXiv. [https://arxiv.org/abs/2406.20015](https://arxiv.org/abs/2406.20015)
 
-Zhong, W., Guo, L., Gao, Q., Ye, H., & Wang, Y. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. https://arxiv.org/abs/2305.10250
+Zhong, W., Guo, L., Gao, Q., Ye, H., & Wang, Y. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. [https://arxiv.org/abs/2305.10250](https://arxiv.org/abs/2305.10250)

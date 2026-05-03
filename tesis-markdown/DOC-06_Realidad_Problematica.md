@@ -87,60 +87,60 @@ En síntesis, la realidad problemática evidencia que el context rot en agentes 
 
 **Referencias**
 
-Anthropic. (2024). Model Context Protocol specification. https://modelcontextprotocol.io/specification/2025-11-25
+Anthropic. (2024). Model Context Protocol specification. [https://modelcontextprotocol.io/specification/2025-11-25](https://modelcontextprotocol.io/specification/2025-11-25)
 
-Chroma Research. (2025). Context rot: How increasing input tokens impacts LLM performance. https://research.trychroma.com/context-rot
+Chroma Research. (2025). Context rot: How increasing input tokens impacts LLM performance. [https://research.trychroma.com/context-rot](https://research.trychroma.com/context-rot)
 
-Chhikara, P., Singh, T., Yadav, D., Nie, N., & Doerr, T. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. https://arxiv.org/abs/2504.19413
+Chhikara, P., Singh, T., Yadav, D., Nie, N., & Doerr, T. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. [https://arxiv.org/abs/2504.19413](https://arxiv.org/abs/2504.19413)
 
-Databricks. (2025). State of AI: Enterprise adoption & growth trends. https://www.databricks.com/blog/state-ai-enterprise-adoption-growth-trends
+Databricks. (2025). State of AI: Enterprise adoption & growth trends. [https://www.databricks.com/blog/state-ai-enterprise-adoption-growth-trends](https://www.databricks.com/blog/state-ai-enterprise-adoption-growth-trends)
 
-Diario Oficial El Peruano. (2024). Transformación digital: 72% de las empresas en el Perú comenzará este proceso en el 2024. https://elperuano.pe/noticia/235308-transformacion-digital-72-de-las-empresas-en-el-peru-comenzara-este-proceso-en-el-2024
+Diario Oficial El Peruano. (2024). Transformación digital: 72% de las empresas en el Perú comenzará este proceso en el 2024. [https://elperuano.pe/noticia/235308-transformacion-digital-72-de-las-empresas-en-el-peru-comenzara-este-proceso-en-el-2024](https://elperuano.pe/noticia/235308-transformacion-digital-72-de-las-empresas-en-el-peru-comenzara-este-proceso-en-el-2024)
 
-EY Perú. (2024). Nuevos horizontes de la madurez digital en el Perú 2024. EY. https://www.ey.com/es\_pe/insights/revista-execution/central/inteligencia-artificial-hispanoamerica
+EY Perú. (2024). Nuevos horizontes de la madurez digital en el Perú 2024. EY. [https://www.ey.com/es\_pe/insights/revista-execution/central/inteligencia-artificial-hispanoamerica](https://www.ey.com/es\_pe/insights/revista-execution/central/inteligencia-artificial-hispanoamerica)
 
-Gan, T., & Sun, Q. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. https://arxiv.org/abs/2505.03275
+Gan, T., & Sun, Q. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. [https://arxiv.org/abs/2505.03275](https://arxiv.org/abs/2505.03275)
 
-Gartner. (2025, junio 25). Gartner predicts over 40 percent of agentic AI projects will be canceled by end of 2027 \[Press release\]. https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027
+Gartner. (2025, junio 25). Gartner predicts over 40 percent of agentic AI projects will be canceled by end of 2027 \[Press release\]. [https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027)
 
-Global Market Insights. (2025). Enterprise LLM market size & share, statistics report 2025–2034. https://www.gminsights.com/industry-analysis/enterprise-llm-market
+Global Market Insights. (2025). Enterprise LLM market size & share, statistics report 2025–2034. [https://www.gminsights.com/industry-analysis/enterprise-llm-market](https://www.gminsights.com/industry-analysis/enterprise-llm-market)
 
-IntuitionLabs. (2025). What is context engineering? A guide for AI & LLMs. https://intuitionlabs.ai/articles/what-is-context-engineering
+IntuitionLabs. (2025). What is context engineering? A guide for AI & LLMs. [https://intuitionlabs.ai/articles/what-is-context-engineering](https://intuitionlabs.ai/articles/what-is-context-engineering)
 
 Instituto Nacional de Estadística e Informática. (2024). Estadísticas de tecnologías de información y comunicaciones en los hogares. INEI.
 
-Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of COLING 2025: Industry Track. ACL Anthology. https://arxiv.org/abs/2501.09645
+Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of COLING 2025: Industry Track. ACL Anthology. [https://arxiv.org/abs/2501.09645](https://arxiv.org/abs/2501.09645)
 
-LangChain. (2024). LangGraph: State management and agent orchestration \[Documentación técnica\]. LangChain Inc. https://langchain-ai.github.io/langgraph/
+LangChain. (2024). LangGraph: State management and agent orchestration \[Documentación técnica\]. LangChain Inc. [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/)
 
-Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of ACL 2024 (pp. 13851–13870). https://arxiv.org/abs/2402.17753
+Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of ACL 2024 (pp. 13851–13870). [https://arxiv.org/abs/2402.17753](https://arxiv.org/abs/2402.17753)
 
-Menlo Ventures. (2025). 2025: The state of generative AI in the enterprise. https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/
+Menlo Ventures. (2025). 2025: The state of generative AI in the enterprise. [https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/)
 
-Microsoft. (2025). Global AI adoption in 2025. AI Economy Institute. https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/
+Microsoft. (2025). Global AI adoption in 2025. AI Economy Institute. [https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/](https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/)
 
 Oxford Insights. (2024). Government AI readiness index 2024. Oxford Insights.
 
-Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. https://arxiv.org/abs/2310.08560
+Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
-Prensa Perú. (2025). Índice de preparación de los gobiernos para la inteligencia artificial 2024. https://prensaperu.pe/2025/03/29/indice-de-preparacion-de-los-gobiernos-para-la-inteligencia-artificial-2024
+Prensa Perú. (2025). Índice de preparación de los gobiernos para la inteligencia artificial 2024. [https://prensaperu.pe/2025/03/29/indice-de-preparacion-de-los-gobiernos-para-la-inteligencia-artificial-2024](https://prensaperu.pe/2025/03/29/indice-de-preparacion-de-los-gobiernos-para-la-inteligencia-artificial-2024)
 
-Redis Labs. (2025). Context window overflow: Breaking the barrier. https://redis.io/blog/context-window-overflow/
+Redis Labs. (2025). Context window overflow: Breaking the barrier. [https://redis.io/blog/context-window-overflow/](https://redis.io/blog/context-window-overflow/)
 
-Vercel. (2025, diciembre). We removed 80% of our agent’s tools. Vercel Engineering Blog. https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools
+Vercel. (2025, diciembre). We removed 80% of our agent’s tools. Vercel Engineering Blog. [https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools](https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools)
 
-Revista Interfases. (2025). Implementación de inteligencia artificial en el Estado peruano: catálogo analítico de aplicaciones. Universidad de Lima. https://revistas.ulima.edu.pe/index.php/Interfases/article/view/8263
+Revista Interfases. (2025). Implementación de inteligencia artificial en el Estado peruano: catálogo analítico de aplicaciones. Universidad de Lima. [https://revistas.ulima.edu.pe/index.php/Interfases/article/view/8263](https://revistas.ulima.edu.pe/index.php/Interfases/article/view/8263)
 
-Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. En Advances in Neural Information Processing Systems (NeurIPS 2023). https://arxiv.org/abs/2302.04761
+Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. En Advances in Neural Information Processing Systems (NeurIPS 2023). [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
 
-Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. En Advances in Neural Information Processing Systems (Vol. 30). https://arxiv.org/abs/1706.03762
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. En Advances in Neural Information Processing Systems (Vol. 30). [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 
-Visual ERP. (2025). Inteligencia artificial en empresas peruanas 2025. https://grupovisualcont.com/noticias/inteligencia-artificial-en-empresas-peruanas-2025/
+Visual ERP. (2025). Inteligencia artificial en empresas peruanas 2025. [https://grupovisualcont.com/noticias/inteligencia-artificial-en-empresas-peruanas-2025/](https://grupovisualcont.com/noticias/inteligencia-artificial-en-empresas-peruanas-2025/)
 
-Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2024). LongMemEval: Benchmarking chat assistants on long-term interactive memory. arXiv. https://arxiv.org/abs/2410.10813
+Wu, D., Wang, H., Yu, W., Zhang, Y., Chang, K.-W., & Yu, D. (2024). LongMemEval: Benchmarking chat assistants on long-term interactive memory. arXiv. [https://arxiv.org/abs/2410.10813](https://arxiv.org/abs/2410.10813)
 
-Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. https://arxiv.org/abs/2210.03629
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
 
-Zhang, Y., et al. (2024). ToolBeHonest: A multi-level hallucination diagnostic benchmark for tool-augmented large language models. arXiv. https://arxiv.org/abs/2406.20015
+Zhang, Y., et al. (2024). ToolBeHonest: A multi-level hallucination diagnostic benchmark for tool-augmented large language models. arXiv. [https://arxiv.org/abs/2406.20015](https://arxiv.org/abs/2406.20015)
 
-Zhong, W., Guo, L., Gao, Q., Ye, H., & Wang, Y. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. https://arxiv.org/abs/2305.10250
+Zhong, W., Guo, L., Gao, Q., Ye, H., & Wang, Y. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. [https://arxiv.org/abs/2305.10250](https://arxiv.org/abs/2305.10250)
