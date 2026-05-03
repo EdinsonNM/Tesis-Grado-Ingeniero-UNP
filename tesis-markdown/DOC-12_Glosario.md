@@ -1,7 +1,7 @@
 # DOC-12 — Glosario de Términos
 
 > **Tipo:** Tesis — Capítulo II  
-> **Descripción:** Definiciones formales de los términos técnicos del dominio de investigación.
+> **Descripción:** Definiciones formales de todos los términos técnicos del dominio.
 
 ---
 
@@ -21,13 +21,13 @@ Tesis de Maestría
 
 **Glosario de Términos**
 
-El presente glosario reúne las definiciones operacionales de los términos técnicos, siglas y conceptos especializados utilizados en el desarrollo de la tesis. Las definiciones son específicas al contexto del estudio ---agentes LLM, Model Context Protocol y técnicas de memoria--- y se han construido a partir de las fuentes primarias citadas en el marco teórico (DOC-11). Para cada término se indica la referencia de la fuente cuando la definición deriva directamente de un trabajo publicado; en caso contrario, la definición es original y consistente con el uso establecido en la literatura del campo.
+El presente glosario reúne las definiciones operacionales de los términos técnicos, siglas y conceptos especializados utilizados en el desarrollo de la tesis. Las definiciones son específicas al contexto del estudio —agentes LLM, Model Context Protocol y técnicas de memoria— y se han construido a partir de las fuentes primarias citadas en el marco teórico (DOC-11). Para cada término se indica la referencia de la fuente cuando la definición deriva directamente de un trabajo publicado; en caso contrario, la definición es original y consistente con el uso establecido en la literatura del campo.
 
 Los términos están ordenados alfabéticamente. Las siglas en español e inglés se incluyen como entradas propias con remisión al término completo correspondiente. El glosario cubre 45 términos distribuidos en 13 letras del alfabeto.
 
 **A**
 
-**Agente LLM**. Sistema de software que utiliza un modelo de lenguaje de gran escala como motor de razonamiento y lo combina con la capacidad de ejecutar acciones en el entorno ---llamadas a herramientas, búsquedas, ejecución de código--- mediante ciclos iterativos de razonamiento, acción y observación, con el objetivo de completar tareas que van más allá de la generación de texto estático. *(Wang et al., 2024)*
+**Agente LLM**. Sistema de software que utiliza un modelo de lenguaje de gran escala como motor de razonamiento y lo combina con la capacidad de ejecutar acciones en el entorno —llamadas a herramientas, búsquedas, ejecución de código— mediante ciclos iterativos de razonamiento, acción y observación, con el objetivo de completar tareas que van más allá de la generación de texto estático. *(Wang et al., 2024)*
 
 **Alucinación de herramienta**. Error de un agente LLM que consiste en invocar una herramienta inexistente en el catálogo disponible, especificar parámetros incorrectos para una herramienta existente, o proporcionar valores de parámetros inválidos o fuera del rango aceptado. Es una manifestación específica del fenómeno general de alucinación de los LLM en el contexto del uso de herramientas. *(Zeng et al., 2025)*
 
@@ -57,7 +57,7 @@ Los términos están ordenados alfabéticamente. Las siglas en español e inglé
 
 **E**
 
-**Embeddings**. Representaciones vectoriales densas de elementos discretos ---palabras, tokens, documentos, herramientas--- en un espacio continuo de alta dimensión, generadas mediante redes neuronales entrenadas para capturar relaciones semánticas. Dos elementos con significados similares tienen embeddings con alta similitud coseno. Fundamentales para la recuperación semántica en sistemas RAG y semantic caching.
+**Embeddings**. Representaciones vectoriales densas de elementos discretos —palabras, tokens, documentos, herramientas— en un espacio continuo de alta dimensión, generadas mediante redes neuronales entrenadas para capturar relaciones semánticas. Dos elementos con significados similares tienen embeddings con alta similitud coseno. Fundamentales para la recuperación semántica en sistemas RAG y semantic caching.
 
 **Exactitud de respuesta**. Proporción de afirmaciones verificables en las respuestas de un agente LLM que son correctas respecto a un conjunto de ground truth anotado. Métrica primaria de calidad en los experimentos de esta tesis, medida mediante comparación automatizada contra respuestas de referencia validadas.
 
@@ -117,7 +117,7 @@ Los términos están ordenados alfabéticamente. Las siglas en español e inglé
 
 **P**
 
-**Puntos de cambio**. Ubicaciones en una serie temporal donde las propiedades estadísticas de la serie ---media, varianza, tendencia--- cambian de forma abrupta. En esta tesis, los puntos de cambio en las métricas de calidad de respuesta identifican los umbrales de longitud de contexto a partir de los cuales el context rot se vuelve estadísticamente significativo. Se detectan mediante algoritmos PELT y Binary Segmentation.
+**Puntos de cambio**. Ubicaciones en una serie temporal donde las propiedades estadísticas de la serie —media, varianza, tendencia— cambian de forma abrupta. En esta tesis, los puntos de cambio en las métricas de calidad de respuesta identifican los umbrales de longitud de contexto a partir de los cuales el context rot se vuelve estadísticamente significativo. Se detectan mediante algoritmos PELT y Binary Segmentation.
 
 **R**
 
@@ -125,7 +125,7 @@ Los términos están ordenados alfabéticamente. Las siglas en español e inglé
 
 **RAG-MCP**. Extensión de RAG aplicada específicamente al catálogo de herramientas MCP, que utiliza recuperación semántica para exponer al modelo solo las herramientas más relevantes para cada consulta, en lugar de el catálogo completo. Reduce el overhead de tokens de descripción de herramientas sin sacrificar significativamente la exactitud de selección. *(Tang et al., 2025)*
 
-**Retrieval-Augmented Generation *(RAG)***. Técnica de gestión de memoria externa que combina un modelo de recuperación densa ---que busca documentos o fragmentos relevantes en una base de datos vectorial mediante similitud coseno entre embeddings--- con el modelo de generación, que utiliza los elementos recuperados como contexto adicional para producir la respuesta. Mitiga el context rot al sustituir el historial completo de conversación por los fragmentos más relevantes recuperados dinámicamente. *(Lewis et al., 2020)*
+**Retrieval-Augmented Generation *(RAG)***. Técnica de gestión de memoria externa que combina un modelo de recuperación densa —que busca documentos o fragmentos relevantes en una base de datos vectorial mediante similitud coseno entre embeddings— con el modelo de generación, que utiliza los elementos recuperados como contexto adicional para producir la respuesta. Mitiga el context rot al sustituir el historial completo de conversación por los fragmentos más relevantes recuperados dinámicamente. *(Lewis et al., 2020)*
 
 **S**
 
@@ -161,13 +161,13 @@ Los términos están ordenados alfabéticamente. Las siglas en español e inglé
 
 **Í**
 
-**Índice de calidad de respuesta compuesto *(IQCR)***. Métrica agregada diseñada para esta tesis que integra las cuatro dimensiones primarias de evaluación ---exactitud de respuesta, tasa de alucinación, coherencia conversacional y consumo de tokens--- mediante una ponderación definida por el método AHP. El IQCR permite comparar el desempeño global de diferentes técnicas de memoria en una única dimensión cuantitativa normalizada.
+**Índice de calidad de respuesta compuesto *(IQCR)***. Métrica agregada diseñada para esta tesis que integra las cuatro dimensiones primarias de evaluación —exactitud de respuesta, tasa de alucinación, coherencia conversacional y consumo de tokens— mediante una ponderación definida por el método AHP. El IQCR permite comparar el desempeño global de diferentes técnicas de memoria en una única dimensión cuantitativa normalizada.
 
 **Referencias**
 
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. https://modelcontextprotocol.io/specification
 
-Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., ... Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877--1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., … Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
 
 Chhikara, P., Singh, D., Gupta, T., Goyal, A., & Tiwari, A. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. https://arxiv.org/abs/2504.19413
 
@@ -175,7 +175,7 @@ Chroma Research. (2025). Context rot in production LLM systems: A benchmark stud
 
 Hu, J., Huang, S., Luo, Y., Wu, F., & Lam, W. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. https://arxiv.org/abs/2305.10250
 
-Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459--9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459–9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
 
 Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. arXiv. https://arxiv.org/abs/2402.17753
 

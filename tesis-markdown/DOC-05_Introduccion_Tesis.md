@@ -41,11 +41,11 @@ Esta proliferación expone un problema técnico de creciente relevancia: la degr
 
 El context rot no es un fenómeno de todo o nada: se manifiesta de forma gradual y a lo largo de tres dimensiones interdependientes. La primera es la sobrecarga de herramientas (tool overload): al exponer al modelo un catálogo completo de decenas o cientos de herramientas, la probabilidad de selección incorrecta, de invocación de herramientas inexistentes (alucinación de tools) o de bloqueo del plan de acción se incrementa de forma proporcional al tamaño del catálogo (Zhang et al., 2024). La segunda dimensión es la inflación del contexto por resultados intermedios: cada llamada a una herramienta devuelve datos que se acumulan en el contexto del modelo, incrementando el costo de procesamiento y diluyendo la señal relevante para la consulta actual (LangChain, 2024). La tercera dimensión es la mezcla no estructurada de memorias: preferencias del usuario, hechos operacionales, resultados de herramientas y estado emocional se almacenan en la misma bolsa sin estructura, generando contradicciones y respuestas incoherentes entre sesiones (Kirmayr et al., 2025; Zhong et al., 2023).
 
-La literatura reciente ha comenzado a proponer soluciones para cada una de estas dimensiones de forma individual. Gan y Sun (2025) proponen aplicar recuperación semántica sobre el catálogo de herramientas antes de construir el prompt (RAG-MCP), logrando reducir el número de tokens del prompt en más del 50% y triplicar la precisión de selección de herramientas. Chhikara et al. (2025) presentan Mem0, una capa de memoria longitudinal que reduce la latencia en el percentil 95 en un 91% y el costo de tokens en más del 90% frente al baseline de contexto completo. Kirmayr et al. (2025) demuestran que acotar la memoria por categorías predefinidas reduce significativamente las contradicciones y redundancias en sistemas de asistencia personalizada. Sin embargo, ninguno de estos trabajos mide el impacto combinado de múltiples técnicas de forma integrada sobre un agente conectado a múltiples servidores MCP, ni lo hace con métricas económicas ---costo de tokens y latencia--- como variables primarias de medición.
+La literatura reciente ha comenzado a proponer soluciones para cada una de estas dimensiones de forma individual. Gan y Sun (2025) proponen aplicar recuperación semántica sobre el catálogo de herramientas antes de construir el prompt (RAG-MCP), logrando reducir el número de tokens del prompt en más del 50% y triplicar la precisión de selección de herramientas. Chhikara et al. (2025) presentan Mem0, una capa de memoria longitudinal que reduce la latencia en el percentil 95 en un 91% y el costo de tokens en más del 90% frente al baseline de contexto completo. Kirmayr et al. (2025) demuestran que acotar la memoria por categorías predefinidas reduce significativamente las contradicciones y redundancias en sistemas de asistencia personalizada. Sin embargo, ninguno de estos trabajos mide el impacto combinado de múltiples técnicas de forma integrada sobre un agente conectado a múltiples servidores MCP, ni lo hace con métricas económicas —costo de tokens y latencia— como variables primarias de medición.
 
 **Justificación de la Investigación**
 
-La justificación de esta investigación opera en tres niveles. A nivel teórico, el campo carece de un marco de referencia integrado que relacione el número de servidores MCP conectados con la magnitud de la degradación de respuestas y con la efectividad de las técnicas de mitigación disponibles. Los benchmarks existentes ---LongMemEval (Wu et al., 2024), LoCoMo (Maharana et al., 2024) y ToolHaystack (2025)--- miden aspectos específicos del problema pero no lo abordan en su dimensión multi-MCP completa ni incorporan métricas de costo como variables dependientes.
+La justificación de esta investigación opera en tres niveles. A nivel teórico, el campo carece de un marco de referencia integrado que relacione el número de servidores MCP conectados con la magnitud de la degradación de respuestas y con la efectividad de las técnicas de mitigación disponibles. Los benchmarks existentes —LongMemEval (Wu et al., 2024), LoCoMo (Maharana et al., 2024) y ToolHaystack (2025)— miden aspectos específicos del problema pero no lo abordan en su dimensión multi-MCP completa ni incorporan métricas de costo como variables dependientes.
 
 A nivel práctico, la degradación de respuestas en agentes LLM tiene consecuencias directas en la calidad de los sistemas de software que los incorporan: mayor latencia para el usuario final, mayor costo operativo para las organizaciones que los despliegan, y mayor riesgo de errores o información incorrecta en los resultados. En el contexto peruano y latinoamericano, donde la adopción de inteligencia artificial generativa en empresas y organismos del Estado se encuentra en una fase temprana pero de crecimiento acelerado, contar con evidencia empírica sobre el comportamiento de estas arquitecturas bajo condiciones controladas resulta de alto valor para la toma de decisiones de diseño e implementación.
 
@@ -55,7 +55,7 @@ A nivel metodológico, la investigación contribuye con un protocolo experimenta
 
 ***Objetivo General***
 
-Medir el impacto de distintas técnicas de memoria y gestión de contexto sobre la degradación de respuestas ---expresada en costo de tokens, latencia de respuesta y precisión--- en agentes LLM conectados a múltiples servidores MCP bajo condiciones experimentales controladas.
+Medir el impacto de distintas técnicas de memoria y gestión de contexto sobre la degradación de respuestas —expresada en costo de tokens, latencia de respuesta y precisión— en agentes LLM conectados a múltiples servidores MCP bajo condiciones experimentales controladas.
 
 ***Objetivos Específicos***
 
@@ -63,7 +63,7 @@ Medir el impacto de distintas técnicas de memoria y gestión de contexto sobre 
 
 2.  Medir la degradación progresiva de las métricas de rendimiento conforme se incrementa el número de servidores MCP conectados al agente (de uno a cinco o más servidores).
 
-3.  Evaluar el impacto individual de cinco técnicas de mitigación ---tool gating, memoria de sesión compacta, memoria longitudinal categorizada, recuperación federada y caching semántico--- sobre las métricas de degradación medidas.
+3.  Evaluar el impacto individual de cinco técnicas de mitigación —tool gating, memoria de sesión compacta, memoria longitudinal categorizada, recuperación federada y caching semántico— sobre las métricas de degradación medidas.
 
 4.  Comparar la relación rendimiento-costo de cada técnica de mitigación para identificar cuáles ofrecen la mayor recuperación de precisión con el menor incremento de latencia y costo de tokens.
 
@@ -71,7 +71,7 @@ Medir el impacto de distintas técnicas de memoria y gestión de contexto sobre 
 
 **Hipótesis General**
 
-La aplicación de técnicas de memoria estructurada y control de contexto ---en particular el tool gating, la memoria de sesión compacta y la memoria longitudinal categorizada--- reduce significativamente la degradación de respuestas (context rot) en agentes LLM conectados a múltiples servidores MCP, manifestada como una reducción estadísticamente significativa del costo de tokens, la latencia de respuesta y la tasa de error, en comparación con un agente LLM sin técnicas de mitigación aplicadas.
+La aplicación de técnicas de memoria estructurada y control de contexto —en particular el tool gating, la memoria de sesión compacta y la memoria longitudinal categorizada— reduce significativamente la degradación de respuestas (context rot) en agentes LLM conectados a múltiples servidores MCP, manifestada como una reducción estadísticamente significativa del costo de tokens, la latencia de respuesta y la tasa de error, en comparación con un agente LLM sin técnicas de mitigación aplicadas.
 
 **Alcance y Delimitación**
 
@@ -91,11 +91,11 @@ Chhikara, P., Singh, T., Yadav, D., Nie, N., & Doerr, T. (2025). Mem0: Building 
 
 Gan, T., & Sun, Q. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. https://arxiv.org/abs/2505.03275
 
-Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of the 31st International Conference on Computational Linguistics: Industry Track (pp. 350--365). Association for Computational Linguistics. https://arxiv.org/abs/2501.09645
+Kirmayr, J., Stappen, L., Schneider, P., Matthes, F., & André, E. (2025). CarMem: Enhancing long-term memory in LLM voice assistants through category-bounding. En Proceedings of the 31st International Conference on Computational Linguistics: Industry Track (pp. 350–365). Association for Computational Linguistics. https://arxiv.org/abs/2501.09645
 
 LangChain. (2024). LangGraph: State management and agent orchestration \[Documentación técnica\]. LangChain Inc. https://langchain-ai.github.io/langgraph/
 
-Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (pp. 13851--13870). ACL. https://arxiv.org/abs/2402.17753
+Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. En Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (pp. 13851–13870). ACL. https://arxiv.org/abs/2402.17753
 
 Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. https://arxiv.org/abs/2310.08560
 

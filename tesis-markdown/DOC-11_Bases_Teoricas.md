@@ -39,7 +39,7 @@ Los LLM modernos como la familia GPT (Brown et al., 2020), Llama (Touvron et al.
 
 Un concepto central para la comprensión del problema estudiado es la ventana de contexto (context window), que define el número máximo de tokens que el modelo puede procesar en una sola inferencia. La ventana de contexto incluye tanto la entrada del usuario como el historial de conversación y las respuestas del modelo, lo que significa que en conversaciones largas el contexto disponible se llena progresivamente.
 
-Los LLM de generación actual cuentan con ventanas de contexto que van desde los 128,000 tokens (Claude Sonnet 4.5, Anthropic, 2024) hasta el millón de tokens (Gemini 1.5 Pro, Anil et al., 2023). Sin embargo, la capacidad nominal de la ventana de contexto no equivale a una capacidad de atención uniforme sobre todos los tokens presentes: Liu et al. (2023) demostraron que los LLM exhiben un sesgo de posición que reduce la atención efectiva sobre los tokens ubicados en el centro de contextos largos ---el denominado efecto lost-in-the-middle---, con consecuencias directas sobre la calidad de las respuestas en conversaciones extensas.
+Los LLM de generación actual cuentan con ventanas de contexto que van desde los 128,000 tokens (Claude Sonnet 4.5, Anthropic, 2024) hasta el millón de tokens (Gemini 1.5 Pro, Anil et al., 2023). Sin embargo, la capacidad nominal de la ventana de contexto no equivale a una capacidad de atención uniforme sobre todos los tokens presentes: Liu et al. (2023) demostraron que los LLM exhiben un sesgo de posición que reduce la atención efectiva sobre los tokens ubicados en el centro de contextos largos —el denominado efecto lost-in-the-middle—, con consecuencias directas sobre la calidad de las respuestas en conversaciones extensas.
 
 **Capacidades de Razonamiento y Limitaciones**
 
@@ -49,7 +49,7 @@ Los LLM han demostrado capacidades emergentes de razonamiento en cadena (chain-o
 
 **Definición de Agente LLM**
 
-Un agente LLM es un sistema de software que utiliza un modelo de lenguaje como motor de razonamiento y lo combina con la capacidad de ejecutar acciones en el entorno ---ya sean llamadas a herramientas externas, búsquedas en bases de datos, ejecución de código o interacciones con APIs--- con el objetivo de completar tareas que van más allá de la generación de texto estático (Wang et al., 2024). A diferencia del uso conversacional de un LLM, los agentes operan en ciclos de razonamiento-acción-observación que pueden extenderse a lo largo de múltiples turnos y herramientas.
+Un agente LLM es un sistema de software que utiliza un modelo de lenguaje como motor de razonamiento y lo combina con la capacidad de ejecutar acciones en el entorno —ya sean llamadas a herramientas externas, búsquedas en bases de datos, ejecución de código o interacciones con APIs— con el objetivo de completar tareas que van más allá de la generación de texto estático (Wang et al., 2024). A diferencia del uso conversacional de un LLM, los agentes operan en ciclos de razonamiento-acción-observación que pueden extenderse a lo largo de múltiples turnos y herramientas.
 
 **El Marco ReAct**
 
@@ -63,7 +63,7 @@ Toolformer (Schick et al., 2023) demostró que los LLM podían aprender a usar h
 
 **Arquitecturas Multi-Agente**
 
-Las arquitecturas multi-agente extienden el paradigma del agente individual mediante la coordinación de múltiples LLM especializados que colaboran para resolver tareas complejas (Hong et al., 2023). En estas arquitecturas, los agentes pueden actuar como orquestadores ---que delegan subtareas--- o como ejecutores especializados. Aunque el presente estudio se centra en agentes individuales conectados a múltiples servidores MCP y no en sistemas multi-agente propiamente dichos, los principios de gestión de contexto y memoria son transferibles a ambas arquitecturas.
+Las arquitecturas multi-agente extienden el paradigma del agente individual mediante la coordinación de múltiples LLM especializados que colaboran para resolver tareas complejas (Hong et al., 2023). En estas arquitecturas, los agentes pueden actuar como orquestadores —que delegan subtareas— o como ejecutores especializados. Aunque el presente estudio se centra en agentes individuales conectados a múltiples servidores MCP y no en sistemas multi-agente propiamente dichos, los principios de gestión de contexto y memoria son transferibles a ambas arquitecturas.
 
 **Model Context Protocol**
 
@@ -73,13 +73,13 @@ El Model Context Protocol (MCP) fue publicado por Anthropic en noviembre de 2024
 
 **Arquitectura del Protocolo**
 
-La arquitectura MCP sigue el patrón cliente-servidor. El servidor MCP expone un catálogo de herramientas (tools), recursos (resources) y prompts mediante un esquema JSON estandarizado. El cliente MCP ---que en el contexto de esta tesis es el agente LLM--- negocia las capacidades con el servidor durante la inicialización de la sesión y recibe el listado completo de herramientas disponibles, incluyendo sus nombres, descripciones y esquemas de parámetros en formato JSON Schema.
+La arquitectura MCP sigue el patrón cliente-servidor. El servidor MCP expone un catálogo de herramientas (tools), recursos (resources) y prompts mediante un esquema JSON estandarizado. El cliente MCP —que en el contexto de esta tesis es el agente LLM— negocia las capacidades con el servidor durante la inicialización de la sesión y recibe el listado completo de herramientas disponibles, incluyendo sus nombres, descripciones y esquemas de parámetros en formato JSON Schema.
 
 El flujo de comunicación MCP estándar incluye cuatro fases: (a) inicialización (initialize), en la que el cliente declara sus capacidades y el servidor responde con las suyas; (b) listado de herramientas (tools/list), en la que el cliente obtiene el catálogo completo de herramientas disponibles; (c) invocación (tools/call), en la que el cliente ejecuta una herramienta específica con los parámetros requeridos; y (d) notificación de cambios (notifications/tools/list\_changed), mediante la que el servidor comunica actualizaciones en el catálogo de herramientas (Anthropic, 2024).
 
 **Impacto sobre el Contexto del Agente**
 
-El aspecto del protocolo MCP más relevante para el problema estudiado es el mecanismo de exposición de herramientas. En la implementación estándar de MCP, el cliente recibe y mantiene en el contexto del modelo las descripciones completas de todas las herramientas disponibles en todos los servidores conectados. Para un servidor típico con 20 herramientas cuyas descripciones ocupan un promedio de 200 tokens cada una, la sola exposición del catálogo consume 4,000 tokens del contexto disponible (Tang et al., 2025). En arquitecturas multi-servidor con 3 a 5 servidores MCP activos, este overhead puede alcanzar los 12,000--20,000 tokens, lo que representa entre el 9% y el 16% de la ventana de contexto de un modelo de 128,000 tokens, antes de que el agente haya procesado una sola consulta del usuario.
+El aspecto del protocolo MCP más relevante para el problema estudiado es el mecanismo de exposición de herramientas. En la implementación estándar de MCP, el cliente recibe y mantiene en el contexto del modelo las descripciones completas de todas las herramientas disponibles en todos los servidores conectados. Para un servidor típico con 20 herramientas cuyas descripciones ocupan un promedio de 200 tokens cada una, la sola exposición del catálogo consume 4,000 tokens del contexto disponible (Tang et al., 2025). En arquitecturas multi-servidor con 3 a 5 servidores MCP activos, este overhead puede alcanzar los 12,000–20,000 tokens, lo que representa entre el 9% y el 16% de la ventana de contexto de un modelo de 128,000 tokens, antes de que el agente haya procesado una sola consulta del usuario.
 
 **Degradación de Contexto y Context Rot**
 
@@ -97,15 +97,15 @@ El tool overload ocurre cuando el número de herramientas expuestas al modelo su
 
 ***Acumulación de Resultados Intermedios***
 
-En el ciclo ReAct, los resultados de cada invocación de herramienta se incorporan al contexto del agente como observaciones. En conversaciones largas, estas observaciones se acumulan linealmente, desplazando hacia el centro del contexto las instrucciones iniciales y el historial de conversación más antiguo. Liu et al. (2023) demostraron que los LLM exhiben una reducción de hasta el 40% en la utilización efectiva de información ubicada en el centro del contexto en comparación con la información ubicada al inicio o al final. Este efecto de lost-in-the-middle se intensifica cuando los resultados de herramientas ---que suelen ser verbosos y poco comprimidos--- ocupan la región central del contexto.
+En el ciclo ReAct, los resultados de cada invocación de herramienta se incorporan al contexto del agente como observaciones. En conversaciones largas, estas observaciones se acumulan linealmente, desplazando hacia el centro del contexto las instrucciones iniciales y el historial de conversación más antiguo. Liu et al. (2023) demostraron que los LLM exhiben una reducción de hasta el 40% en la utilización efectiva de información ubicada en el centro del contexto en comparación con la información ubicada al inicio o al final. Este efecto de lost-in-the-middle se intensifica cuando los resultados de herramientas —que suelen ser verbosos y poco comprimidos— ocupan la región central del contexto.
 
 ***Mezcla de Estados de Sesión***
 
-En arquitecturas multi-MCP, cada servidor mantiene su propio estado de sesión y puede generar metadatos de contexto ---mensajes de error, avisos de autenticación, paginación de resultados--- que se incorporan al contexto del agente. La coexistencia de metadatos de múltiples servidores con semánticas distintas introduce ruido en el contexto que puede confundir al modelo sobre el estado actual de la tarea. Chroma Research (2025) documentó que los agentes multi-MCP exhiben tasas de error en la atribución de resultados a servidores correctos que aumentan del 3% en sesiones de un servidor al 18% en sesiones de cinco servidores, evidenciando el impacto de la mezcla de estados de sesión.
+En arquitecturas multi-MCP, cada servidor mantiene su propio estado de sesión y puede generar metadatos de contexto —mensajes de error, avisos de autenticación, paginación de resultados— que se incorporan al contexto del agente. La coexistencia de metadatos de múltiples servidores con semánticas distintas introduce ruido en el contexto que puede confundir al modelo sobre el estado actual de la tarea. Chroma Research (2025) documentó que los agentes multi-MCP exhiben tasas de error en la atribución de resultados a servidores correctos que aumentan del 3% en sesiones de un servidor al 18% en sesiones de cinco servidores, evidenciando el impacto de la mezcla de estados de sesión.
 
 **Evidencia Empírica de Context Rot**
 
-La evidencia empírica sobre la degradación de respuestas en contextos largos es convergente. Liu et al. (2023) demostraron la degradación en tareas de recuperación de información con contextos de hasta 4,000 tokens. Shi et al. (2023) mostraron que la presencia de información irrelevante en el contexto reduce la exactitud en tareas de razonamiento en hasta un 65%. Chroma Research (2025) documentó degradaciones superiores al 30% en la exactitud de respuestas de agentes LLM en producción después de 50 turnos de conversación. Redis Labs (2025) reportó que el 67% del costo operativo de inferencia en sistemas multi-herramienta se atribuye a la acumulación de contexto, no a la generación de respuestas nuevas. Desde la industria, Vercel (2025) documentó que su agente d0 con 17--18 herramientas alcanzaba una tasa de éxito del 80%, mientras que al reducir el catálogo a operaciones mínimas la tasa subió al 100%, con una reducción del 37% en tokens, mejora de 3.5× en velocidad y 42% menos pasos necesarios---evidencia de producción que cuantifica directamente el impacto del tool overload.
+La evidencia empírica sobre la degradación de respuestas en contextos largos es convergente. Liu et al. (2023) demostraron la degradación en tareas de recuperación de información con contextos de hasta 4,000 tokens. Shi et al. (2023) mostraron que la presencia de información irrelevante en el contexto reduce la exactitud en tareas de razonamiento en hasta un 65%. Chroma Research (2025) documentó degradaciones superiores al 30% en la exactitud de respuestas de agentes LLM en producción después de 50 turnos de conversación. Redis Labs (2025) reportó que el 67% del costo operativo de inferencia en sistemas multi-herramienta se atribuye a la acumulación de contexto, no a la generación de respuestas nuevas. Desde la industria, Vercel (2025) documentó que su agente d0 con 17–18 herramientas alcanzaba una tasa de éxito del 80%, mientras que al reducir el catálogo a operaciones mínimas la tasa subió al 100%, con una reducción del 37% en tokens, mejora de 3.5× en velocidad y 42% menos pasos necesarios—evidencia de producción que cuantifica directamente el impacto del tool overload.
 
 **Técnicas de Memoria y Gestión de Contexto**
 
@@ -113,11 +113,11 @@ La evidencia empírica sobre la degradación de respuestas en contextos largos e
 
 Siguiendo la taxonomía propuesta por Wang et al. (2024), los sistemas de memoria en agentes LLM se clasifican en cuatro categorías según su mecanismo de almacenamiento y recuperación: (a) memoria en contexto (in-context memory), que utiliza directamente el historial de conversación almacenado en la ventana de contexto del modelo; (b) memoria externa (external memory), que almacena información en bases de datos vectoriales o relacionales externas al modelo; (c) memoria en parámetros (in-weights memory), que codifica el conocimiento en los pesos del modelo mediante fine-tuning; y (d) memoria en caché (in-cache memory), que reutiliza estados de activación del modelo para acelerar la inferencia sobre prefijos repetidos.
 
-Esta tesis se enfoca en las técnicas de memoria externa y en caché, ya que son las que pueden ser implementadas a nivel de agente sin modificar los parámetros del modelo base ---condición necesaria dado el uso de APIs comerciales--- y las que tienen mayor impacto directo sobre el fenómeno de context rot.
+Esta tesis se enfoca en las técnicas de memoria externa y en caché, ya que son las que pueden ser implementadas a nivel de agente sin modificar los parámetros del modelo base —condición necesaria dado el uso de APIs comerciales— y las que tienen mayor impacto directo sobre el fenómeno de context rot.
 
 **Retrieval-Augmented Generation**
 
-La Generación Aumentada por Recuperación (Retrieval-Augmented Generation, RAG; Lewis et al., 2020) es la técnica de memoria externa más ampliamente adoptada en sistemas de agentes LLM. En su formulación original, RAG combina un modelo de recuperación densa ---que convierte la consulta del usuario en un vector de embeddings y busca los documentos más similares en una base de datos vectorial--- con un modelo de generación que utiliza los documentos recuperados como contexto adicional para producir la respuesta.
+La Generación Aumentada por Recuperación (Retrieval-Augmented Generation, RAG; Lewis et al., 2020) es la técnica de memoria externa más ampliamente adoptada en sistemas de agentes LLM. En su formulación original, RAG combina un modelo de recuperación densa —que convierte la consulta del usuario en un vector de embeddings y busca los documentos más similares en una base de datos vectorial— con un modelo de generación que utiliza los documentos recuperados como contexto adicional para producir la respuesta.
 
 En el contexto de agentes LLM multi-MCP, RAG puede aplicarse de dos formas complementarias: (a) RAG de historial de conversación, que recupera los turnos pasados más relevantes para la consulta actual en lugar de mantener el historial completo en el contexto; y (b) RAG-MCP (Tang et al., 2025), que aplica recuperación semántica sobre el catálogo de herramientas MCP para exponer al modelo solo las herramientas más relevantes para cada consulta, mitigando el tool overload.
 
@@ -131,15 +131,15 @@ En la práctica, SessionFacts se implementa mediante un proceso de extracción p
 
 **MemoryBank y Memoria a Largo Plazo**
 
-MemoryBank (Hu et al., 2023) es un sistema de memoria a largo plazo para agentes LLM que combina almacenamiento externo con un mecanismo de recuperación basado en relevancia y una política de olvido inspirada en la curva de Ebbinghaus. El sistema mantiene una base de datos de memorias ---fragmentos de información extraídos de conversaciones pasadas--- que son recuperadas selectivamente cuando su relevancia para la consulta actual supera un umbral definido.
+MemoryBank (Hu et al., 2023) es un sistema de memoria a largo plazo para agentes LLM que combina almacenamiento externo con un mecanismo de recuperación basado en relevancia y una política de olvido inspirada en la curva de Ebbinghaus. El sistema mantiene una base de datos de memorias —fragmentos de información extraídos de conversaciones pasadas— que son recuperadas selectivamente cuando su relevancia para la consulta actual supera un umbral definido.
 
 La política de olvido de MemoryBank asigna a cada memoria un peso de relevancia que decrece exponencialmente con el tiempo transcurrido desde su última recuperación, reduciendo la probabilidad de recuperar información obsoleta sin eliminarla permanentemente. Esta característica es especialmente valiosa en conversaciones largas donde la relevancia de la información varía a lo largo del tiempo. Hu et al. (2023) evaluaron MemoryBank en simulaciones de conversación de hasta 500 turnos y reportaron una mejora del 37% en la coherencia conversacional respecto a agentes sin memoria externa.
 
 **Semantic Caching**
 
-El caching semántico (semantic caching) es una técnica de memoria en caché que reutiliza respuestas previas del agente para consultas semánticamente equivalentes, evitando la inferencia completa del modelo para preguntas similares. A diferencia del caching exacto ---que requiere coincidencia literal de la consulta--- el caching semántico utiliza similaridad coseno entre vectores de embeddings para identificar consultas equivalentes, tolerando variaciones en la formulación.
+El caching semántico (semantic caching) es una técnica de memoria en caché que reutiliza respuestas previas del agente para consultas semánticamente equivalentes, evitando la inferencia completa del modelo para preguntas similares. A diferencia del caching exacto —que requiere coincidencia literal de la consulta— el caching semántico utiliza similaridad coseno entre vectores de embeddings para identificar consultas equivalentes, tolerando variaciones en la formulación.
 
-Implementaciones como RedisVL (Redis Labs, 2025) almacenan pares (embedding de consulta, respuesta) en una base de datos vectorial con índices de búsqueda aproximada de vecinos más cercanos (ANN). Cuando la similitud coseno entre la consulta entrante y una consulta almacenada supera un umbral de configuración (típicamente 0.92--0.95), la respuesta almacenada se retorna directamente sin invocar el modelo. Esta técnica no reduce el context rot directamente, pero reduce el número de invocaciones de herramientas MCP necesarias, lo que disminuye la acumulación de observaciones en el contexto.
+Implementaciones como RedisVL (Redis Labs, 2025) almacenan pares (embedding de consulta, respuesta) en una base de datos vectorial con índices de búsqueda aproximada de vecinos más cercanos (ANN). Cuando la similitud coseno entre la consulta entrante y una consulta almacenada supera un umbral de configuración (típicamente 0.92–0.95), la respuesta almacenada se retorna directamente sin invocar el modelo. Esta técnica no reduce el context rot directamente, pero reduce el número de invocaciones de herramientas MCP necesarias, lo que disminuye la acumulación de observaciones en el contexto.
 
 **Mem0 y Memoria Personalizada**
 
@@ -159,7 +159,7 @@ Tang et al. (2025) implementaron esta técnica en RAG-MCP y reportaron que la ex
 
 **Carga Diferida de Herramientas**
 
-La carga diferida (lazy loading) es una estrategia complementaria al filtrado semántico en la que las herramientas MCP no se cargan en el contexto del modelo hasta que el agente determina, mediante un paso de razonamiento previo, que son necesarias para la tarea actual. A diferencia del filtrado semántico ---que es un proceso pasivo que ocurre antes de la generación del turno--- la carga diferida implica un ciclo adicional de razonamiento: el agente primero razona sobre qué categorías de herramientas necesita, luego solicita al sistema de tool gating que cargue solo esas categorías, y finalmente ejecuta el razonamiento completo con las herramientas cargadas.
+La carga diferida (lazy loading) es una estrategia complementaria al filtrado semántico en la que las herramientas MCP no se cargan en el contexto del modelo hasta que el agente determina, mediante un paso de razonamiento previo, que son necesarias para la tarea actual. A diferencia del filtrado semántico —que es un proceso pasivo que ocurre antes de la generación del turno— la carga diferida implica un ciclo adicional de razonamiento: el agente primero razona sobre qué categorías de herramientas necesita, luego solicita al sistema de tool gating que cargue solo esas categorías, y finalmente ejecuta el razonamiento completo con las herramientas cargadas.
 
 Esta técnica introduce latencia adicional (un ciclo de razonamiento extra) pero puede reducir significativamente el overhead de tokens en sesiones donde el agente utiliza herramientas de dominios muy diferentes en distintas fases de la conversación. Es especialmente adecuada para agentes conectados a servidores MCP de dominios heterogéneos, como el caso típico de un agente empresarial conectado simultáneamente a servidores de búsqueda, bases de datos, calendario y comunicaciones.
 
@@ -167,7 +167,7 @@ Esta técnica introduce latencia adicional (un ciclo de razonamiento extra) pero
 
 **Dimensiones de Evaluación**
 
-La evaluación de agentes LLM es un campo activo de investigación que ha producido múltiples frameworks y benchmarks en los últimos años. Para el problema específico de esta tesis ---la medición del context rot en agentes multi-MCP--- las dimensiones de evaluación más relevantes son: (a) exactitud de la respuesta final respecto a un ground truth anotado; (b) tasa de alucinación factual, que mide la proporción de afirmaciones verificables en la respuesta que son incorrectas; (c) coherencia conversacional, que evalúa la consistencia de las respuestas del agente a lo largo de una conversación extendida; (d) exactitud en la selección de herramientas, que mide si el agente invoca la herramienta correcta con los parámetros correctos; y (e) eficiencia computacional, medida a través del consumo de tokens por turno y la latencia de generación.
+La evaluación de agentes LLM es un campo activo de investigación que ha producido múltiples frameworks y benchmarks en los últimos años. Para el problema específico de esta tesis —la medición del context rot en agentes multi-MCP— las dimensiones de evaluación más relevantes son: (a) exactitud de la respuesta final respecto a un ground truth anotado; (b) tasa de alucinación factual, que mide la proporción de afirmaciones verificables en la respuesta que son incorrectas; (c) coherencia conversacional, que evalúa la consistencia de las respuestas del agente a lo largo de una conversación extendida; (d) exactitud en la selección de herramientas, que mide si el agente invoca la herramienta correcta con los parámetros correctos; y (e) eficiencia computacional, medida a través del consumo de tokens por turno y la latencia de generación.
 
 **LongMemEval**
 
@@ -191,7 +191,7 @@ Además de los benchmarks específicos, la evaluación en esta tesis incorporar�
 
 **Síntesis del Marco Teórico**
 
-Los siete bloques teóricos desarrollados en este capítulo convergen en una cadena causal que fundamenta el problema de investigación: los agentes LLM basados en transformer operan dentro de una ventana de contexto limitada; cuando se conectan a múltiples servidores MCP, los mecanismos de tool overload, acumulación de observaciones y mezcla de estados de sesión consumen progresivamente el contexto disponible y degradan la calidad de las respuestas (context rot); las técnicas de memoria externa ---RAG, SessionFacts, MemoryBank, semantic caching--- y las estrategias de tool gating constituyen intervenciones de software que pueden mitigar esta degradación; y los benchmarks LongMemEval, LoCoMo y SimpleToolHalluBench, junto con las métricas de exactitud, coherencia, alucinación y consumo de tokens, proporcionan los instrumentos de medición necesarios para cuantificar el impacto de dichas intervenciones.
+Los siete bloques teóricos desarrollados en este capítulo convergen en una cadena causal que fundamenta el problema de investigación: los agentes LLM basados en transformer operan dentro de una ventana de contexto limitada; cuando se conectan a múltiples servidores MCP, los mecanismos de tool overload, acumulación de observaciones y mezcla de estados de sesión consumen progresivamente el contexto disponible y degradan la calidad de las respuestas (context rot); las técnicas de memoria externa —RAG, SessionFacts, MemoryBank, semantic caching— y las estrategias de tool gating constituyen intervenciones de software que pueden mitigar esta degradación; y los benchmarks LongMemEval, LoCoMo y SimpleToolHalluBench, junto con las métricas de exactitud, coherencia, alucinación y consumo de tokens, proporcionan los instrumentos de medición necesarios para cuantificar el impacto de dichas intervenciones.
 
 Esta cadena causal es la base sobre la que se construyen las hipótesis de la investigación (DOC-13) y el diseño experimental (desarrollado en el capítulo de metodología), garantizando la coherencia entre el marco teórico, el problema, los objetivos y el método.
 
@@ -201,7 +201,7 @@ Zhou et al. (2026) proponen el paradigma de la externalización como marco para 
 
 El paper distingue cuatro formas de externalización: (a) la memoria, que externaliza el estado a través del tiempo; (b) las skills, que externalizan el conocimiento procedural; (c) los protocolos, que externalizan la estructura de interacción; y (d) el harness engineering, que actúa como capa de coordinación gobernada de todas las anteriores.
 
-La tesis sitúa su contribución en la tercera era de este paradigma --- la era del harness ---, generando evidencia empírica cuantitativa sobre qué combinaciones de capas de memoria y protocolo minimizan el context rot en escenarios multi-MCP. Los resultados informan el diseño de harnesses efectivos para entornos multi-servidor en producción.
+La tesis sitúa su contribución en la tercera era de este paradigma — la era del harness —, generando evidencia empírica cuantitativa sobre qué combinaciones de capas de memoria y protocolo minimizan el context rot en escenarios multi-MCP. Los resultados informan el diseño de harnesses efectivos para entornos multi-servidor en producción.
 
 **Referencias**
 
@@ -209,7 +209,7 @@ Anil, R., Chowdhery, A., Roberts, A., Askell, A., Brants, T., Fawcett, M., Gauth
 
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. https://modelcontextprotocol.io/specification
 
-Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., ... Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877--1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., … Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
 
 Chhikara, P., Singh, D., Gupta, T., Goyal, A., & Tiwari, A. (2025). Mem0: Building production-ready AI agents with scalable long-term memory. arXiv. https://arxiv.org/abs/2504.19413
 
@@ -219,15 +219,15 @@ Hong, S., Zhuge, M., Chen, J., Zheng, X., Cheng, Y., Zhang, C., Wang, J., Wang, 
 
 Hu, J., Huang, S., Luo, Y., Wu, F., & Lam, W. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. https://arxiv.org/abs/2305.10250
 
-Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459--9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459–9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
 
-Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157--173. https://doi.org/10.1162/tacl\_a\_00638
+Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. https://doi.org/10.1162/tacl\_a\_00638
 
 Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. arXiv. https://arxiv.org/abs/2402.17753
 
 OpenAI. (2023). Function calling in the API. OpenAI. https://platform.openai.com/docs/guides/function-calling
 
-Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C. L., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Ray, A., Schulman, J., Hilton, J., Kelton, F., Miller, L., Simens, M., Askell, A., Welinder, P., Christiano, P., Leike, J., & Lowe, R. (2022). Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35, 27730--27744. https://proceedings.neurips.cc/paper\_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html
+Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C. L., Mishkin, P., Zhang, C., Agarwal, S., Slama, K., Ray, A., Schulman, J., Hilton, J., Kelton, F., Miller, L., Simens, M., Askell, A., Welinder, P., Christiano, P., Leike, J., & Lowe, R. (2022). Training language models to follow instructions with human feedback. Advances in Neural Information Processing Systems, 35, 27730–27744. https://proceedings.neurips.cc/paper\_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html
 
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. https://arxiv.org/abs/2310.08560
 
@@ -237,11 +237,11 @@ Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., Tang, X
 
 Redis Labs. (2025). Enterprise AI deployment patterns: Token consumption and memory management. Redis. https://redis.io/blog/enterprise-ai-memory-2025
 
-Vercel. (2025, diciembre). We removed 80% of our agent's tools. Vercel Engineering Blog. https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools
+Vercel. (2025, diciembre). We removed 80% of our agent’s tools. Vercel Engineering Blog. https://vercel.com/blog/we-removed-80-percent-of-our-agents-tools
 
 Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. Advances in Neural Information Processing Systems, 36. https://arxiv.org/abs/2302.04761
 
-Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. Proceedings of the 40th International Conference on Machine Learning, 202, 31210--31227. https://proceedings.mlr.press/v202/shi23a.html
+Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. Proceedings of the 40th International Conference on Machine Learning, 202, 31210–31227. https://proceedings.mlr.press/v202/shi23a.html
 
 Tang, R., Jin, Z., Alexandrov, A., Shao, Y., Shi, P., & Pan, L. (2025). RAG-MCP: Mitigating prompt bloat in LLM tool selection via retrieval-augmented generation. arXiv. https://arxiv.org/abs/2502.03415
 
@@ -253,7 +253,7 @@ Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Ka
 
 Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Y., Zhao, W. X., Wei, Z., & Wen, J.-R. (2024). A survey on large language model based autonomous agents. Frontiers of Computer Science, 18(6), 186345. https://doi.org/10.1007/s11704-024-40231-1
 
-Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q., & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35, 24824--24837. https://proceedings.neurips.cc/paper\_files/paper/2022/hash/9d5609613524ecf4f15af0f7b31abca4-Abstract-Conference.html
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q., & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural Information Processing Systems, 35, 24824–24837. https://proceedings.neurips.cc/paper\_files/paper/2022/hash/9d5609613524ecf4f15af0f7b31abca4-Abstract-Conference.html
 
 Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing reasoning and acting in language models. arXiv. https://arxiv.org/abs/2210.03629
 

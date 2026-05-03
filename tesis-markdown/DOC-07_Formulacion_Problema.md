@@ -25,7 +25,7 @@ La formulación del problema constituye el núcleo lógico de toda investigació
 
 El presente trabajo aborda un fenómeno emergente en la ingeniería de sistemas de inteligencia artificial: la degradación progresiva de la calidad de respuestas en agentes basados en modelos de lenguaje de gran escala (LLM) cuando estos se conectan simultáneamente a múltiples servidores bajo el Model Context Protocol (MCP). Dicha degradación, denominada context rot en la literatura técnica, tiene consecuencias directas sobre la confiabilidad, precisión y coherencia de los sistemas agentes en entornos de producción.
 
-Si bien existe literatura sobre técnicas individuales de gestión de memoria y contexto ---como RAG, tool gating, SessionFacts y semantic caching--- no se ha documentado empíricamente en qué medida cada técnica, ni combinaciones de ellas, mitigan el context rot en arquitecturas multi-MCP. Esta brecha justifica la necesidad de un estudio experimental controlado y cuantificable.
+Si bien existe literatura sobre técnicas individuales de gestión de memoria y contexto —como RAG, tool gating, SessionFacts y semantic caching— no se ha documentado empíricamente en qué medida cada técnica, ni combinaciones de ellas, mitigan el context rot en arquitecturas multi-MCP. Esta brecha justifica la necesidad de un estudio experimental controlado y cuantificable.
 
 **Problema General**
 
@@ -49,13 +49,13 @@ Este problema establece la línea base (baseline) del experimento. Para responde
 
 **Problema Específico 2: Efectividad de Técnicas de Memoria Individuales**
 
-> *¿En qué medida cada técnica individual de memoria ---RAG semántico, SessionFacts, MemoryBank y semantic caching--- reduce la degradación de respuestas en agentes LLM multi-MCP, medida en términos de exactitud, coherencia y consumo de tokens?*
+> *¿En qué medida cada técnica individual de memoria —RAG semántico, SessionFacts, MemoryBank y semantic caching— reduce la degradación de respuestas en agentes LLM multi-MCP, medida en términos de exactitud, coherencia y consumo de tokens?*
 
 Este problema examina el efecto aislado de cuatro técnicas representativas identificadas en la revisión de literatura. Para cada técnica se implementará una variante del agente experimental y se ejecutarán los mismos escenarios de conversación que en el baseline. La comparación permitirá estimar el efecto marginal de cada técnica sobre las métricas seleccionadas, identificando cuál ofrece la mejor relación entre mejora en calidad y overhead computacional.
 
 **Problema Específico 3: Efectividad de Técnicas de Tool Gating**
 
-> *¿En qué medida las estrategias de tool gating ---incluyendo carga diferida de herramientas y filtrado semántico por relevancia--- reducen la sobrecarga de contexto y la degradación de respuestas en agentes LLM conectados a catálogos de herramientas MCP de gran escala?*
+> *¿En qué medida las estrategias de tool gating —incluyendo carga diferida de herramientas y filtrado semántico por relevancia— reducen la sobrecarga de contexto y la degradación de respuestas en agentes LLM conectados a catálogos de herramientas MCP de gran escala?*
 
 El tool overload constituye uno de los tres mecanismos principales de context rot identificados en la literatura. Este problema específico aísla el impacto de exponer un gran número de herramientas MCP al modelo (20, 50 y 100 herramientas disponibles) versus aplicar filtrado semántico dinámico que reduzca las herramientas visibles al contexto inmediato. Las métricas de interés incluyen la tasa de selección correcta de herramientas, la tasa de alucinación de parámetros y el número de tokens consumidos por la descripción de herramientas.
 
@@ -63,7 +63,7 @@ El tool overload constituye uno de los tres mecanismos principales de context ro
 
 > *¿Qué combinación de técnicas de memoria y gestión de contexto produce el mayor impacto positivo sobre la calidad de respuestas en agentes LLM multi-MCP, considerando conjuntamente la exactitud, la coherencia, la latencia y el consumo de recursos computacionales?*
 
-Este problema aborda el efecto de sinergia o interferencia entre técnicas. Una vez caracterizado el efecto individual de cada técnica (PE1--PE3), se evaluarán configuraciones combinadas seleccionadas mediante diseño factorial 2k reducido. El objetivo es determinar si la combinación de, por ejemplo, RAG semántico con tool gating y SessionFacts supera el desempeño de cualquiera de las técnicas aplicadas de forma independiente, y en qué condiciones se produce efecto de saturación o redundancia.
+Este problema aborda el efecto de sinergia o interferencia entre técnicas. Una vez caracterizado el efecto individual de cada técnica (PE1–PE3), se evaluarán configuraciones combinadas seleccionadas mediante diseño factorial 2k reducido. El objetivo es determinar si la combinación de, por ejemplo, RAG semántico con tool gating y SessionFacts supera el desempeño de cualquiera de las técnicas aplicadas de forma independiente, y en qué condiciones se produce efecto de saturación o redundancia.
 
 **Problema Específico 5: Umbrales de Degradación y Puntos Críticos**
 
@@ -103,14 +103,14 @@ Cada problema específico formulado en esta sección se corresponde biunívocame
 
 La Tabla 1 muestra la correspondencia entre problemas específicos, objetivos e hipótesis:
 
-  --------- ------------------------------------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
-  **N°**    **Problema Específico**                                                                    **Objetivo Específico**                                                                                                       **Hipótesis Específica**
-  **PE1**   Cuantificación de degradación base (sin técnicas aplicadas)                                OE1: Establecer la línea base de degradación en arquitectura multi-MCP sin memoria                                            HE1: La arquitectura sin memoria presenta \>25% de degradación a partir del turno 30
-  **PE2**   Efectividad de técnicas de memoria individuales (RAG, SessionFacts, MemoryBank, caching)   OE2: Comparar el impacto de cada técnica de memoria sobre las métricas de calidad de respuesta                                HE2: Al menos una técnica individual reduce la degradación en \>40% respecto al baseline
-  **PE3**   Efectividad de técnicas de tool gating y carga diferida de herramientas                    OE3: Evaluar el impacto del tool gating sobre la sobrecarga de contexto y la tasa de selección correcta                       HE3: El tool gating reduce el consumo de tokens de herramientas en \>50% sin sacrificar exactitud
-  **PE4**   Sinergia de técnicas combinadas en arquitecturas multi-MCP                                 OE4: Identificar la combinación de técnicas que maximiza la calidad de respuesta y minimiza el context rot                    HE4: La combinación óptima supera a cualquier técnica individual en al menos dos métricas de calidad
-  **PE5**   Umbrales de degradación y puntos críticos de context rot                                   OE5: Localizar los umbrales de longitud de contexto a partir de los cuales el context rot es estadísticamente significativo   HE5: Existen umbrales discretos de longitud de contexto y número de servidores MCP que predicen el inicio del context rot
-  --------- ------------------------------------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
+|         |                                                                                          |                                                                                                                             |                                                                                                                           |
+| ------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **N°**  | **Problema Específico**                                                                  | **Objetivo Específico**                                                                                                     | **Hipótesis Específica**                                                                                                  |
+| **PE1** | Cuantificación de degradación base (sin técnicas aplicadas)                              | OE1: Establecer la línea base de degradación en arquitectura multi-MCP sin memoria                                          | HE1: La arquitectura sin memoria presenta \>25% de degradación a partir del turno 30                                      |
+| **PE2** | Efectividad de técnicas de memoria individuales (RAG, SessionFacts, MemoryBank, caching) | OE2: Comparar el impacto de cada técnica de memoria sobre las métricas de calidad de respuesta                              | HE2: Al menos una técnica individual reduce la degradación en \>40% respecto al baseline                                  |
+| **PE3** | Efectividad de técnicas de tool gating y carga diferida de herramientas                  | OE3: Evaluar el impacto del tool gating sobre la sobrecarga de contexto y la tasa de selección correcta                     | HE3: El tool gating reduce el consumo de tokens de herramientas en \>50% sin sacrificar exactitud                         |
+| **PE4** | Sinergia de técnicas combinadas en arquitecturas multi-MCP                               | OE4: Identificar la combinación de técnicas que maximiza la calidad de respuesta y minimiza el context rot                  | HE4: La combinación óptima supera a cualquier técnica individual en al menos dos métricas de calidad                      |
+| **PE5** | Umbrales de degradación y puntos críticos de context rot                                 | OE5: Localizar los umbrales de longitud de contexto a partir de los cuales el context rot es estadísticamente significativo | HE5: Existen umbrales discretos de longitud de contexto y número de servidores MCP que predicen el inicio del context rot |
 
 > *Nota.* Correspondencia entre problemas, objetivos e hipótesis del estudio. Los documentos DOC-09 y DOC-13 desarrollan en extenso cada objetivo e hipótesis respectivamente.
 
@@ -118,15 +118,15 @@ La Tabla 1 muestra la correspondencia entre problemas específicos, objetivos e 
 
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. https://modelcontextprotocol.io/specification
 
-Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., ... Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877--1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., … Amodei, D. (2020). Language models are few-shot learners. Advances in Neural Information Processing Systems, 33, 1877–1901. https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html
 
 Chroma Research. (2025). Context rot in production LLM systems: A benchmark study. Chroma. https://www.trychroma.com/blog/context-rot
 
 Hu, J., Huang, S., Luo, Y., Wu, F., & Lam, W. (2023). MemoryBank: Enhancing large language models with long-term memory. arXiv. https://arxiv.org/abs/2305.10250
 
-Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459--9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-T., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. Advances in Neural Information Processing Systems, 33, 9459–9474. https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
 
-Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157--173. https://doi.org/10.1162/tacl\_a\_00638
+Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. https://doi.org/10.1162/tacl\_a\_00638
 
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. https://arxiv.org/abs/2310.08560
 

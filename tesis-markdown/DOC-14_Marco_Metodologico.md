@@ -1,7 +1,7 @@
 # DOC-14 — Marco Metodológico
 
 > **Tipo:** Tesis — Capítulo III  
-> **Descripción:** Diseño experimental: tipo de estudio, variables, protocolo de medición e instrumentos.
+> **Descripción:** Diseño experimental: tipo de estudio, variables, protocolo, diseño factorial 2^k e instrumentos.
 
 ---
 
@@ -25,7 +25,7 @@ El marco metodológico define las decisiones epistemológicas, el diseño experi
 
 **3.1 Enfoque de Investigación**
 
-La investigación adopta un enfoque cuantitativo. Según Hernández Sampieri et al. (2014), el enfoque cuantitativo se caracteriza por la medición numérica de fenómenos, el uso de análisis estadístico y el contraste de hipótesis mediante procedimientos replicables. Este enfoque es el más apropiado para el problema estudiado porque: (a) las variables dependientes del estudio ---exactitud de respuesta, tasa de alucinación, consumo de tokens, coherencia conversacional--- son inherentemente numéricas y mensurables con instrumentos objetivos; (b) el objetivo central es establecer relaciones causales entre las técnicas de memoria y la calidad de respuesta, lo que requiere control experimental y pruebas de significancia estadística; y (c) los resultados deben ser reproducibles por otros investigadores con las mismas condiciones experimentales.
+La investigación adopta un enfoque cuantitativo. Según Hernández Sampieri et al. (2014), el enfoque cuantitativo se caracteriza por la medición numérica de fenómenos, el uso de análisis estadístico y el contraste de hipótesis mediante procedimientos replicables. Este enfoque es el más apropiado para el problema estudiado porque: (a) las variables dependientes del estudio —exactitud de respuesta, tasa de alucinación, consumo de tokens, coherencia conversacional— son inherentemente numéricas y mensurables con instrumentos objetivos; (b) el objetivo central es establecer relaciones causales entre las técnicas de memoria y la calidad de respuesta, lo que requiere control experimental y pruebas de significancia estadística; y (c) los resultados deben ser reproducibles por otros investigadores con las mismas condiciones experimentales.
 
 El enfoque cuantitativo no excluye la interpretación cualitativa de los patrones observados en los datos. En la fase de discusión de resultados se recurrirá a análisis interpretativo para contextualizar los hallazgos numéricos en el marco de la práctica de ingeniería de sistemas agentes. Sin embargo, la recolección de datos y la verificación de hipótesis se realizarán exclusivamente mediante procedimientos cuantitativos.
 
@@ -93,27 +93,27 @@ La quinta fase ejecuta el diseño factorial 2k-1 (fraccionado de resolución IV)
 
 **Fase 6: Análisis Estadístico y Detección de Umbrales**
 
-La sexta fase realiza el análisis estadístico completo: pruebas de hipótesis para HE1--HE5, cálculo de tamaños del efecto, construcción de intervalos de confianza y aplicación del algoritmo PELT para detección de puntos de cambio en las series temporales de degradación. Los análisis se realizarán en Python utilizando las librerías scipy, statsmodels, ruptures (para PELT) y pingouin (para ANOVA y pruebas de equivalencia). Todos los scripts de análisis se publicarán como material suplementario de la tesis para garantizar la reproducibilidad.
+La sexta fase realiza el análisis estadístico completo: pruebas de hipótesis para HE1–HE5, cálculo de tamaños del efecto, construcción de intervalos de confianza y aplicación del algoritmo PELT para detección de puntos de cambio en las series temporales de degradación. Los análisis se realizarán en Python utilizando las librerías scipy, statsmodels, ruptures (para PELT) y pingouin (para ANOVA y pruebas de equivalencia). Todos los scripts de análisis se publicarán como material suplementario de la tesis para garantizar la reproducibilidad.
 
 **3.7 Técnicas e Instrumentos**
 
 La Tabla 1 presenta las técnicas e instrumentos utilizados en cada fase del estudio:
 
-  -------------------------------------------- ------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------
-  **Técnica**                                  **Instrumento / Herramienta**                                                                    **Propósito**
-  **Inferencia LLM**                           API Anthropic Claude Sonnet 4.5 (temperatura 0.0)                                                Motor de razonamiento del agente experimental en todos los grupos de tratamiento
-  **Recuperación semántica (RAG)**             ChromaDB + modelo de embeddings text-embedding-3-small (OpenAI)                                  Indexación y recuperación del historial de conversación y catálogo de herramientas para los grupos RAG y RAG-MCP
-  **Compresión de sesión (SessionFacts)**      Módulo de extracción de hechos implementado sobre el SDK de Anthropic                            Generación periódica (cada 10 turnos) de resumen estructurado del historial de conversación
-  **Memoria a largo plazo (MemoryBank)**       SQLite + implementación del modelo de olvido Ebbinghaus en Python                                Almacenamiento y recuperación ponderada por relevancia temporal de memorias de conversación
-  **Caching semántico**                        RedisVL con índice HNSW y umbral de similitud coseno = 0.92                                      Reutilización de respuestas para consultas semánticamente equivalentes
-  **Filtrado de herramientas (tool gating)**   Módulo Python de filtrado semántico sobre embeddings del catálogo MCP                            Selección dinámica de las k herramientas más relevantes por turno (k = 5 por defecto)
-  **Evaluación de exactitud**                  Comparación automática contra ground truth anotado con scorer de coincidencia exacta y parcial   Medición de la métrica primaria de calidad de respuesta en cada turno
-  **Evaluación de coherencia**                 BERTScore (Zhang et al., 2020) con modelo de referencia deberta-v3-large                         Medición de la similitud semántica entre respuestas consecutivas y con el historial
-  **Detección de alucinaciones**               Verificador de hechos basado en LLM con prompts de verificación cruzada contra ground truth      Cuantificación de la tasa de alucinación factual en las respuestas
-  **Conteo de tokens**                         Contadores nativos de la API de Anthropic (input\_tokens, output\_tokens)                        Medición del consumo de tokens por turno para calcular eficiencia computacional
-  **Análisis estadístico**                     Python: scipy, statsmodels, pingouin, ruptures                                                   Pruebas de hipótesis, ANOVA, TOST, detección de puntos de cambio PELT
-  **Gestión de experimentos**                  MLflow para registro de parámetros, métricas y artefactos de cada corrida experimental           Trazabilidad, reproducibilidad y comparación de experimentos
-  -------------------------------------------- ------------------------------------------------------------------------------------------------ ------------------------------------------------------------------------------------------------------------------
+|                                            |                                                                                                |                                                                                                                  |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **Técnica**                                | **Instrumento / Herramienta**                                                                  | **Propósito**                                                                                                    |
+| **Inferencia LLM**                         | API Anthropic Claude Sonnet 4.5 (temperatura 0.0)                                              | Motor de razonamiento del agente experimental en todos los grupos de tratamiento                                 |
+| **Recuperación semántica (RAG)**           | ChromaDB + modelo de embeddings text-embedding-3-small (OpenAI)                                | Indexación y recuperación del historial de conversación y catálogo de herramientas para los grupos RAG y RAG-MCP |
+| **Compresión de sesión (SessionFacts)**    | Módulo de extracción de hechos implementado sobre el SDK de Anthropic                          | Generación periódica (cada 10 turnos) de resumen estructurado del historial de conversación                      |
+| **Memoria a largo plazo (MemoryBank)**     | SQLite + implementación del modelo de olvido Ebbinghaus en Python                              | Almacenamiento y recuperación ponderada por relevancia temporal de memorias de conversación                      |
+| **Caching semántico**                      | RedisVL con índice HNSW y umbral de similitud coseno = 0.92                                    | Reutilización de respuestas para consultas semánticamente equivalentes                                           |
+| **Filtrado de herramientas (tool gating)** | Módulo Python de filtrado semántico sobre embeddings del catálogo MCP                          | Selección dinámica de las k herramientas más relevantes por turno (k = 5 por defecto)                            |
+| **Evaluación de exactitud**                | Comparación automática contra ground truth anotado con scorer de coincidencia exacta y parcial | Medición de la métrica primaria de calidad de respuesta en cada turno                                            |
+| **Evaluación de coherencia**               | BERTScore (Zhang et al., 2020) con modelo de referencia deberta-v3-large                       | Medición de la similitud semántica entre respuestas consecutivas y con el historial                              |
+| **Detección de alucinaciones**             | Verificador de hechos basado en LLM con prompts de verificación cruzada contra ground truth    | Cuantificación de la tasa de alucinación factual en las respuestas                                               |
+| **Conteo de tokens**                       | Contadores nativos de la API de Anthropic (input\_tokens, output\_tokens)                      | Medición del consumo de tokens por turno para calcular eficiencia computacional                                  |
+| **Análisis estadístico**                   | Python: scipy, statsmodels, pingouin, ruptures                                                 | Pruebas de hipótesis, ANOVA, TOST, detección de puntos de cambio PELT                                            |
+| **Gestión de experimentos**                | MLflow para registro de parámetros, métricas y artefactos de cada corrida experimental         | Trazabilidad, reproducibilidad y comparación de experimentos                                                     |
 
 > *Nota.* Técnicas e instrumentos del diseño experimental. API = Application Programming Interface; RAG = Retrieval-Augmented Generation; MCP = Model Context Protocol; HNSW = Hierarchical Navigable Small World; PELT = Pruned Exact Linear Time; TOST = Two One-Sided Tests.
 
@@ -125,11 +125,11 @@ El estudio utiliza la API comercial de Anthropic para acceder al modelo Claude S
 
 **Uso de Datos Sintéticos y de Referencia**
 
-Los datasets utilizados ---LongMemEval (Truong & Ho, 2023) y LoCoMo (Maharana et al., 2024)--- son de acceso público y están publicados bajo licencias que permiten su uso para investigación académica no comercial. Los escenarios de conversación diseñados ad hoc para el experimento son completamente sintéticos y no contienen información personal identificable ni datos sensibles de ninguna persona.
+Los datasets utilizados —LongMemEval (Truong & Ho, 2023) y LoCoMo (Maharana et al., 2024)— son de acceso público y están publicados bajo licencias que permiten su uso para investigación académica no comercial. Los escenarios de conversación diseñados ad hoc para el experimento son completamente sintéticos y no contienen información personal identificable ni datos sensibles de ninguna persona.
 
 **Propiedad Intelectual y Reproducibilidad**
 
-Todo el código desarrollado para el experimento ---incluyendo los módulos de cada técnica de memoria, el módulo de evaluación y los scripts de análisis estadístico--- se publicará bajo licencia MIT como material suplementario de la tesis, garantizando la reproducibilidad de los resultados. Las referencias a trabajos previos se citarán siguiendo el formato APA 7 en todos los documentos de la tesis.
+Todo el código desarrollado para el experimento —incluyendo los módulos de cada técnica de memoria, el módulo de evaluación y los scripts de análisis estadístico— se publicará bajo licencia MIT como material suplementario de la tesis, garantizando la reproducibilidad de los resultados. Las referencias a trabajos previos se citarán siguiendo el formato APA 7 en todos los documentos de la tesis.
 
 **Impacto Ambiental del Cómputo**
 
@@ -143,13 +143,13 @@ El investigador declara no tener conflictos de interés económicos ni instituci
 
 Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. https://modelcontextprotocol.io/specification
 
-Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G\*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behavior Research Methods, 39(2), 175--191. https://doi.org/10.3758/BF03193146
+Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G\*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behavior Research Methods, 39(2), 175–191. https://doi.org/10.3758/BF03193146
 
 Hernández Sampieri, R., Fernández Collado, C., & Baptista Lucio, P. (2014). Metodología de la investigación (6.ª ed.). McGraw-Hill Education.
 
-Killick, R., Fearnhead, P., & Eckley, I. A. (2012). Optimal detection of changepoints with a linear computational cost. Journal of the American Statistical Association, 107(500), 1590--1598. https://doi.org/10.1080/01621459.2012.737745
+Killick, R., Fearnhead, P., & Eckley, I. A. (2012). Optimal detection of changepoints with a linear computational cost. Journal of the American Statistical Association, 107(500), 1590–1598. https://doi.org/10.1080/01621459.2012.737745
 
-Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157--173. https://doi.org/10.1162/tacl\_a\_00638
+Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. https://doi.org/10.1162/tacl\_a\_00638
 
 Maharana, A., Lee, D.-H., Tulyakov, S., Bansal, M., Barbieri, F., & Fang, Y. (2024). Evaluating very long-term conversational memory of LLM agents. arXiv. https://arxiv.org/abs/2402.17753
 
@@ -157,7 +157,7 @@ Montgomery, D. C. (2017). Design and analysis of experiments (9.ª ed.). Wiley.
 
 Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Houghton Mifflin.
 
-Strubell, E., Ganesh, A., & McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 3645--3650. https://doi.org/10.18653/v1/P19-1355
+Strubell, E., Ganesh, A., & McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 3645–3650. https://doi.org/10.18653/v1/P19-1355
 
 Truong, T. H., & Ho, T. B. (2023). LongMemEval: Benchmarking long-context language models on long-term interactive memory. arXiv. https://arxiv.org/abs/2410.10813
 
