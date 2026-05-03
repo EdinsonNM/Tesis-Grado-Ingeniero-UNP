@@ -1,0 +1,208 @@
+{
+  "main": {
+    "id": "a610fd07ce7fc7f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "71f195060e7e0550",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "946dd33fc071ef70",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02-Marco-Teorico/Bases Teoricas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bases Teoricas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "745cc192e8c07189",
+    "type": "split",
+    "children": [
+      {
+        "id": "acbb470ac4cb715e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5fd3491f68bf8ccd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "79f6d48071233674",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "1a0901eb39228a0f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "69d48e37b6254745",
+    "type": "split",
+    "children": [
+      {
+        "id": "a58dfa5572c5a27a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0efe9d84b938ff9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "3b3c68cd817a888e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "03e45f4d607d41c7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "bf131b6841a3502a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Crear nueva base": false,
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "946dd33fc071ef70",
+  "lastOpenFiles": [
+    "05-Fuentes/Gartner 2025 - Agentic AI Projects Cancellation.md",
+    "05-Fuentes/Zhou 2026 - Externalization in LLM Agents.md",
+    "05-Fuentes/Vercel 2025 - d0 Agent Tool Removal.md",
+    "04-Conceptos/D-Metricas/Latencia p50 p95.md",
+    "02-Marco-Teorico/Marco Referencial.md",
+    "01-Tesis/Realidad Problematica.md",
+    "02-Marco-Teorico/Bases Teoricas.md",
+    "02-Marco-Teorico/Antecedentes.md",
+    "04-Conceptos/D-Metricas/Latencia p50 p95.md.tmp.40614.1777677410354",
+    "04-Conceptos/B-Arquitectura/Namespaces.md",
+    "05-Fuentes/Zhong 2023 - MemoryBank.md",
+    "02-Marco-Teorico/Mapa del marco teorico.md",
+    "04-Conceptos/C-Mitigacion/Tool gating.md",
+    "05-Fuentes/Tang 2025 - RAG-MCP.md",
+    "04-Conceptos/A-Problema/Tool overload.md",
+    "04-Conceptos/A-Problema/Context rot.md",
+    "04-Conceptos/D-Metricas/Variable dependiente.md",
+    "04-Conceptos/F-Metodologia/TOST.md",
+    "04-Conceptos/F-Metodologia/PELT.md",
+    "04-Conceptos/F-Metodologia/Diseno factorial 2k.md",
+    "04-Conceptos/F-Metodologia",
+    "04-Conceptos/E-Benchmarks/ToolHaystack.md",
+    "04-Conceptos/E-Benchmarks/SimpleToolHalluBench.md",
+    "04-Conceptos/E-Benchmarks/LongMemEval.md",
+    "04-Conceptos/E-Benchmarks/LoCoMo.md",
+    "04-Conceptos/E-Benchmarks/Escenarios multi-MCP sinteticos.md",
+    "04-Conceptos/E-Benchmarks/Dataset de evaluacion.md",
+    "04-Conceptos/E-Benchmarks",
+    "04-Conceptos/D-Metricas/Tasa de alucinacion.md",
+    "04-Conceptos/D-Metricas",
+    "04-Conceptos/C-Mitigacion",
+    "04-Conceptos/B-Arquitectura",
+    "04-Conceptos/A-Problema",
+    "00-Mapa/Cap 1 - Aspectos de la Problematica.md.tmp.24191.1777675580181",
+    "rules",
+    "99-Inbox"
+  ]
+}

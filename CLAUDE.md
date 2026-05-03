@@ -1,0 +1,1 @@
+Esta arepeta contiene documentos cuyo objetivo es investigar todo lo necesario para una tesis, incluyendo un folder de obsidian para ayudar a extender mi conocimiento
