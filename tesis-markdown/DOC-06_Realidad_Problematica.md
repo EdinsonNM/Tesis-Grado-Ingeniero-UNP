@@ -119,7 +119,7 @@ Menlo Ventures. (2025). 2025: The state of generative AI in the enterprise. [htt
 
 Microsoft. (2025). Global AI adoption in 2025. AI Economy Institute. [https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/](https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/)
 
-Oxford Insights. (2024). Government AI readiness index 2024. Oxford Insights.
+Oxford Insights. (2025). Government AI Readiness Index 2025. Oxford Insights. https://oxfordinsights.com/wp-content/uploads/2025/12/2025-Government-AI-Readiness-Index-2.pdf
 
 Packer, C., Fang, V., Patil, S. G., Lin, K., Wooders, S., & Gonzalez, J. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 

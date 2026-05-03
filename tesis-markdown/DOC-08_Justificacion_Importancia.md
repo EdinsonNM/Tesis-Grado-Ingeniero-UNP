@@ -67,7 +67,7 @@ El context rot tiene consecuencias directas sobre la experiencia del usuario: un
 
 **Capacitación de Talento Técnico en el Perú**
 
-El Perú ocupa el puesto 60 en el Government AI Readiness Index 2023 ([Oxford Insights, 2023](https://oxfordinsights.com/ai-readiness/ai-readiness-index)) y enfrenta una brecha significativa en talento técnico especializado en IA. Solo el 6% de las empresas peruanas que adoptan IA declaran tener equipos técnicos con capacidades avanzadas, frente al 17–18% de Chile y Colombia ([INEI, 2024](https://www.inei.gob.pe)). La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
+El Perú ocupa el puesto 60 en el Government AI Readiness Index 2025 ([Oxford Insights, 2025](https://oxfordinsights.com/wp-content/uploads/2025/12/2025-Government-AI-Readiness-Index-2.pdf)) y enfrenta una brecha significativa en talento técnico especializado en IA. Solo el 6% de las empresas peruanas que adoptan IA declaran tener equipos técnicos con capacidades avanzadas, frente al 17–18% de Chile y Colombia ([INEI, 2024](https://www.inei.gob.pe)). La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
 
 **Adopción Informada de IA en el Contexto Nacional**
 
@@ -113,7 +113,7 @@ Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & L
 
 MCP Registry. (2025). Public MCP server catalog. [https://mcpregistry.dev](https://mcpregistry.dev)
 
-Oxford Insights. (2023). Government AI Readiness Index 2023. Oxford Insights. [https://oxfordinsights.com/ai-readiness/ai-readiness-index](https://oxfordinsights.com/ai-readiness/ai-readiness-index)
+Oxford Insights. (2025). Government AI Readiness Index 2025. Oxford Insights. https://oxfordinsights.com/wp-content/uploads/2025/12/2025-Government-AI-Readiness-Index-2.pdf
 
 Packer, C., Wooders, S., Lin, K., Fang, V., Patil, S. G., Stoica, I., & Gonzalez, J. E. (2023). MemGPT: Towards LLMs as operating systems. arXiv. [https://arxiv.org/abs/2310.08560](https://arxiv.org/abs/2310.08560)
 
