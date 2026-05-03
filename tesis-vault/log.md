@@ -215,3 +215,27 @@ Actualizados tres documentos Word del directorio `investigación/`:
 - `DOC-06_Realidad_Problematica.docx`: añadido párrafo de Vercel en evidencia empírica y referencia APA.
 - `DOC-11_Bases_Teoricas.docx`: añadido párrafo en Bloque 4 (evidencia context rot) y nota estático/dinámico en Bloque 6 (tool gating), más referencia APA.
 - `DOC-02_Catalogo_Fuentes.docx`: añadida Categoría G (Casos de Producción) con tabla G-01 Vercel 2025.
+
+---
+
+## [2026-05-03] ingest | Zhou 2026 y Gartner 2025 — vault completo
+
+Ingresadas dos nuevas fuentes al vault:
+
+**Zhou et al. (2026) — Externalization in LLM-Based Agents (arXiv:2604.08224)**
+- Creada ficha `05-Fuentes/Zhou 2026 - Externalization in LLM Agents.md` con referencia APA, taxonomía de externalización (memoria/skills/protocolos/harness) y dos citas clave.
+- Añadido Bloque 8 "Harness Engineering como Marco Unificador" en `02-Marco-Teorico/Bases Teoricas.md`.
+- Añadida sección "Antecedentes sobre marcos teóricos unificadores" en `02-Marco-Teorico/Antecedentes.md`.
+- Añadida sección "Marcos teóricos unificadores" en `05-Fuentes/Catalogo inicial de fuentes.md`.
+
+**Gartner (2025) — Over 40% of Agentic AI Projects Will Be Canceled by 2027**
+- Creada ficha `05-Fuentes/Gartner 2025 - Agentic AI Projects Cancellation.md` con nota de uso correcto (no citar como evidencia directa de context rot).
+- Añadido bullet Gartner en cifras clave de `01-Tesis/Realidad Problematica.md`.
+- Añadida sección "Fuentes institucionales" en `05-Fuentes/Catalogo inicial de fuentes.md`.
+
+## [2026-05-03] ingest | DOC-02, DOC-06, DOC-11 actualizados con Zhou 2026 y Gartner 2025
+
+Actualizados documentos Word del directorio `investigación/`:
+- `DOC-11_Bases_Teoricas.docx`: añadido Bloque 8 "Harness Engineering como Marco Unificador" antes de Referencias (tabla de 4 capas de externalización, cita directa de Zhou, posicionamiento de la tesis) + referencia APA de Zhou al final. Total: 262 párrafos.
+- `DOC-06_Realidad_Problematica.docx`: añadido párrafo con predicción Gartner (2025) después del párrafo Databricks + referencia APA de Gartner. Total: 99 párrafos.
+- `DOC-02_Catalogo_Fuentes.docx`: añadidas Categoría H (Marcos Teóricos Unificadores, H-01 Zhou 2026) y Categoría I (Fuentes Institucionales, I-01 Gartner 2025) antes de Categoría G. Total: 463 párrafos.

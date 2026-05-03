@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-Marco-Teorico/Bases Teoricas.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bases Teoricas"
+              "title": "index"
             }
           }
         ]
@@ -168,13 +168,17 @@
   },
   "active": "946dd33fc071ef70",
   "lastOpenFiles": [
+    "Bienvenido.md",
+    "index.md",
+    "CLAUDE.md",
+    "log.md",
+    "02-Marco-Teorico/Bases Teoricas.md",
     "05-Fuentes/Gartner 2025 - Agentic AI Projects Cancellation.md",
     "05-Fuentes/Zhou 2026 - Externalization in LLM Agents.md",
     "05-Fuentes/Vercel 2025 - d0 Agent Tool Removal.md",
     "04-Conceptos/D-Metricas/Latencia p50 p95.md",
     "02-Marco-Teorico/Marco Referencial.md",
     "01-Tesis/Realidad Problematica.md",
-    "02-Marco-Teorico/Bases Teoricas.md",
     "02-Marco-Teorico/Antecedentes.md",
     "04-Conceptos/D-Metricas/Latencia p50 p95.md.tmp.40614.1777677410354",
     "04-Conceptos/B-Arquitectura/Namespaces.md",
@@ -192,11 +196,7 @@
     "04-Conceptos/E-Benchmarks/ToolHaystack.md",
     "04-Conceptos/E-Benchmarks/SimpleToolHalluBench.md",
     "04-Conceptos/E-Benchmarks/LongMemEval.md",
-    "04-Conceptos/E-Benchmarks/LoCoMo.md",
-    "04-Conceptos/E-Benchmarks/Escenarios multi-MCP sinteticos.md",
-    "04-Conceptos/E-Benchmarks/Dataset de evaluacion.md",
     "04-Conceptos/E-Benchmarks",
-    "04-Conceptos/D-Metricas/Tasa de alucinacion.md",
     "04-Conceptos/D-Metricas",
     "04-Conceptos/C-Mitigacion",
     "04-Conceptos/B-Arquitectura",
