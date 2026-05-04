@@ -67,7 +67,7 @@ El context rot tiene consecuencias directas sobre la experiencia del usuario: un
 
 **Capacitación de Talento Técnico en el Perú**
 
-El Perú ocupa el puesto 60 en el Government AI Readiness Index 2025 ([Oxford Insights, 2025](https://oxfordinsights.com/wp-content/uploads/2025/12/2025-Government-AI-Readiness-Index-2.pdf)) y enfrenta una brecha significativa en talento técnico especializado en IA. Solo el 6% de las empresas peruanas que adoptan IA declaran tener equipos técnicos con capacidades avanzadas, frente al 17–18% de Chile y Colombia ([INEI, 2024](https://www.inei.gob.pe)). La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
+El Perú ocupa el puesto 60 en el Government AI Readiness Index 2025 ([Oxford Insights, 2025](https://oxfordinsights.com/wp-content/uploads/2025/12/2025-Government-AI-Readiness-Index-2.pdf)) y enfrenta una brecha significativa en talento técnico especializado en IA. Según el Índice Latinoamericano de Inteligencia Artificial 2025 ([ILIA, 2025](https://www.cepal.org/en/pressreleases/latin-american-artificial-intelligence-index-ilia-reconfirms-chile-brazil-and-uruguay)), Perú alcanzó una puntuación de 51.93 sobre 100, frente a 73.07 de Chile y 52.64 de Colombia, evidenciando una brecha en madurez de IA que la presente investigación busca contribuir a cerrar. La realización de investigación de posgrado en temas de frontera como la arquitectura de agentes LLM y los protocolos MCP contribuye a cerrar esta brecha formando investigadores locales capaces de producir conocimiento relevante para el contexto nacional e internacional.
 
 **Adopción Informada de IA en el Contexto Nacional**
 
@@ -107,7 +107,7 @@ Anthropic. (2024). Model Context Protocol specification (v1.0). Anthropic. [http
 
 Chroma Research. (2025). Context rot in production LLM systems: A benchmark study. Chroma. [https://www.trychroma.com/blog/context-rot](https://www.trychroma.com/blog/context-rot)
 
-INEI. (2024). Encuesta Nacional de Empresas: Uso de tecnologías de información e inteligencia artificial. Instituto Nacional de Estadística e Informática. [https://www.inei.gob.pe](https://www.inei.gob.pe)
+CEPAL / CENIA. (2025). Índice Latinoamericano de Inteligencia Artificial 2025 (ILIA). Comisión Económica para América Latina y el Caribe. https://www.cepal.org/en/pressreleases/latin-american-artificial-intelligence-index-ilia-reconfirms-chile-brazil-and-uruguay
 
 Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2023). Lost in the middle: How language models use long contexts. Transactions of the Association for Computational Linguistics, 12, 157–173. [https://doi.org/10.1162/tacl\_a\_00638](https://doi.org/10.1162/tacl\_a\_00638)
 
